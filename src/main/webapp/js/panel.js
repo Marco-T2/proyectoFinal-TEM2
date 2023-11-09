@@ -44,7 +44,7 @@ if(window.innerWidth < 768) {
 	searchForm.classList.remove('show');
 }
 
-
+//Cambia el icono
 window.addEventListener('resize', function () {
 	if(this.innerWidth > 576) {
 		searchButtonIcon.classList.replace('bx-x', 'bx-search');

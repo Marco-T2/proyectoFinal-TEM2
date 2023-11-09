@@ -20,7 +20,7 @@ li {
 	--lato: 'Lato', sans-serif;
 
 	--light: #F9F9F9;
-	--blue: #3C91E6;
+	--blue: #D95133;
 	--light-blue: #CFE8FF;
 	--grey: #eee;
 	--dark-grey: #AAAAAA;
@@ -67,7 +67,7 @@ body {
 }
 
 #sidebar.hide {
-	width: 60px;
+	width: 80px;
 }
 #sidebar .brand {
 	font-size: 24px;
@@ -130,7 +130,7 @@ form button:focus {
 /* CAMBIOS ALEJANDRO 30/12/2022 4:52AM  */
 
 #sidebar .brand .bx {
-	min-width: 60px;
+	min-width: 80px;
 	display: flex;
 	justify-content: center;
 }
@@ -353,7 +353,7 @@ form button:focus {
 /* MAIN */
 #content main {
 	width: 100%;
-	padding: 36px 24px;
+	padding: 36px 50px;
 	font-family: var(--poppins);
 	max-height: calc(100vh - 56px);
 	overflow-y: auto;

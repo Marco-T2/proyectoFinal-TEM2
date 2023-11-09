@@ -1,7 +1,7 @@
-D:\UPEA\7 septimo semetre\Emergentes II\Practicas\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\UsuarioControlador.java
-D:\UPEA\7 septimo semetre\Emergentes II\Practicas\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\VentaControlador.java
-D:\UPEA\7 septimo semetre\Emergentes II\Practicas\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAOimpl.java
-D:\UPEA\7 septimo semetre\Emergentes II\Practicas\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Usuario.java
-D:\UPEA\7 septimo semetre\Emergentes II\Practicas\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\DashboardControlador.java
-D:\UPEA\7 septimo semetre\Emergentes II\Practicas\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\ConexionBD.java
-D:\UPEA\7 septimo semetre\Emergentes II\Practicas\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAO.java
+C:\Users\marco\Desktop\TEMII-2023\Te_anuncios\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAO.java
+C:\Users\marco\Desktop\TEMII-2023\Te_anuncios\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\ConexionBD.java
+C:\Users\marco\Desktop\TEMII-2023\Te_anuncios\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAOimpl.java
+C:\Users\marco\Desktop\TEMII-2023\Te_anuncios\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\VentaControlador.java
+C:\Users\marco\Desktop\TEMII-2023\Te_anuncios\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Usuario.java
+C:\Users\marco\Desktop\TEMII-2023\Te_anuncios\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\DashboardControlador.java
+C:\Users\marco\Desktop\TEMII-2023\Te_anuncios\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\UsuarioControlador.java

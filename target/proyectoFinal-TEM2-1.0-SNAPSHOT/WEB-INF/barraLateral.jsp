@@ -3,6 +3,7 @@
 %>
 
 <ul class="side-menu top">
+    
     <li class="nav-link <%=(opcion.equals("areaDashboard") ? "active" : "")%>">
         <a href="DashboardControlador">
             <i class='bx bxs-dashboard' ></i>
