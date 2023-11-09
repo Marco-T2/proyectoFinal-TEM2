@@ -34,11 +34,17 @@
         </a>
     </li>
 </ul>
-<ul class="side-menu">
+<ul class="side-menu top">
     <li class="nav-link <%=(opcion.equals("Ajustes") ? "active" : "")%>">
         <a href="">
             <i class='bx bxs-cog' ></i>
             <span class="text">Ajustes</span>
+        </a>
+    </li>
+    <li class="nav-link <%=(opcion.equals("areaUsuarios") ? "active" : "")%>">
+        <a href="UsuarioControlador">
+            <i class='bx bxs-group' ></i>
+            <span class="text">Usuarios</span>
         </a>
     </li>
 </ul>
