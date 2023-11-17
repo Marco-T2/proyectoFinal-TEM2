@@ -35,8 +35,8 @@ public class B2_ClienteControlador extends HttpServlet {
 
             switch (action) {
                 case "add":
-                    /*request.setAttribute("cliente", per);
-                request.getRequestDispatcher("frmcliente.jsp").forward(request, response);*/
+                    request.setAttribute("cliente", per);
+                request.getRequestDispatcher("frmcliente.jsp").forward(request, response);
                     break;
                 case "edit":
                     /*id = Integer.parseInt(request.getParameter("id"));

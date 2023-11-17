@@ -21,6 +21,9 @@
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- DataTable CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+
     </head>
     <!--
     `body` tag options:
@@ -136,28 +139,15 @@
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="dt-buttons btn-group flex-wrap">
-                                                                <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
-                                                                    <span>Copy</span>
-                                                                </button> 
-                                                                <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button">
-                                                                    <span>CSV</span>
-                                                                </button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button">
-                                                                    <span>Excel</span>
-                                                                </button> 
-                                                                <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1" type="button">
-                                                                    <span>PDF</span>
+                                                                <a href="#?action=add">
+                                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                                                    Nuevo
                                                                 </button>
-                                                                <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button">
-                                                                    <span>Print</span>
-                                                                </button> 
-                                                                <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="example1" type="button" aria-haspopup="true">
-                                                                        <span>Column visibility</span>
-                                                                        <span class="dt-down-arrow"></span>
-                                                                    </button>
-                                                                </div> 
+                                                                    </a>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <br>
                                                     <div class="row">
                                                         <div class="col-sm-12">
                                                             <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
@@ -175,32 +165,35 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                <c:forEach var="item" items="${clientes}">
-                                                                   <tr class="odd">
-                                                                        <td class="dtr-control sorting_1" tabindex="0">${item.idpersona}</td>
-                                                                        <td>${item.tipo_persona}</td>
-                                                                        <td>${item.nombre}</td>
-                                                                        <td>${item.ci_documento}</td>
-                                                                        <td>${item.direccion}</td>
-                                                                        <td>${item.telefono}</td>
-                                                                        <td>${item.email}</td>
-                                                                        <td><a href="ProductoControlador?action=edit&id=${item.idpersona}"><i class="fa-solid fa-pen-to-square">Editar</i></a></td>
-                                                                        <td><a href="ProductoControlador?action=delete&id=${item.idpersona}"><i class="fa-solid fa-trash-can">Eliminar</i></a></td>
-                                                                    </tr>                                                                   
-                                                                </c:forEach>
+                                                                    <c:forEach var="item" items="${clientes}">
+                                                                        <tr class="odd">
+                                                                            <td class="dtr-control sorting_1" tabindex="0">${item.idpersona}</td>
+                                                                            <td>${item.tipo_persona}</td>
+                                                                            <td>${item.nombre}</td>
+                                                                            <td>${item.ci_documento}</td>
+                                                                            <td>${item.direccion}</td>
+                                                                            <td>${item.telefono}</td>
+                                                                            <td>${item.email}</td>
+                                                                            <td><a href="ProductoControlador?action=edit&id=${item.idpersona}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a></td>
+                                                                            <td><a href="ProductoControlador?action=delete&id=${item.idpersona}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
+                                                                        </tr>                                                                   
+                                                                    </c:forEach>
                                                                 </tbody>
-                                                            </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- /.card-body -->
                                             </div>
-                                            <!-- /.card-body -->
+                                            <!-- /ESTO SE TIENE QUE MODIFICAR -->
+                                            <!-- /.card -->
                                         </div>
-                                        <!-- /ESTO SE TIENE QUE MODIFICAR -->
-                                        <!-- /.card -->
+                                        <!-- /.col -->
                                     </div>
-                                    <!-- /.col -->
+                                    <!-- /.row -->
                                 </div>
-                                <!-- /.row -->
-                            </div>
-                            <!-- /.container-fluid -->
+                                <!-- /.container-fluid -->
                         </section>
                     </div>
                     <!-- /.Main content -->
@@ -215,30 +208,104 @@
 
                 <!-- Main Footer -->
                 <footer class="main-footer">
-                    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">TEM - 2</a>.</strong>
-                    All rights reserved.
+                    <strong>Copyright &copy; 2023 <a href="https://adminlte.io">TEM - 2</a>.</strong>
+                    Todos los derechos reservados.
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 0.1.0
                     </div>
                 </footer>
         </div>
         <!-- ./wrapper -->
+        <div class="modal fade" id="modal-lg">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Informacion cliente</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Tipo persona</label>
+                                <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Carnet de Identidad</label>
+                                        <input type="text" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Direccion</label>
+                                        <input type="text" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <!-- text input -->
+                                    <div class="form-group">
+                                        <label>Telefono</label>
+                                        <input type="text" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="text" class="form-control" placeholder="Enter ...">
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- REQUIRED SCRIPTS -->
 
-        <!-- REQUIRED SCRIPTS -->
+            <!-- jQuery -->
+            <script src="plugins/jquery/jquery.min.js"></script>
+            <!-- Bootstrap -->
+            <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- AdminLTE -->
+            <script src="dist/js/adminlte.js"></script>
 
-        <!-- jQuery -->
-        <script src="plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE -->
-        <script src="dist/js/adminlte.js"></script>
+            <!-- OPTIONAL SCRIPTS -->
+            <script src="plugins/chart.js/Chart.min.js"></script>
+            <!-- AdminLTE for demo purposes -->
+            <script src="dist/js/demo.js"></script>
+            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+            <script src="dist/js/pages/dashboard3.js"></script>
 
-        <!-- OPTIONAL SCRIPTS -->
-        <script src="plugins/chart.js/Chart.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="dist/js/demo.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="dist/js/pages/dashboard3.js"></script>
+            <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+            <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+            <script>
+                                                                                $(document).ready(function () {
+                                                                                    $('#example1').DataTable();
+                                                                                });
+            </script>
+
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     </body>
 </html>
