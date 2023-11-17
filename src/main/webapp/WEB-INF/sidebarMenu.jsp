@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/forms/advanced.html" class="nav-link">
+                        <a href="D2_CategoriaControlador" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Categorias</p>
                         </a>
