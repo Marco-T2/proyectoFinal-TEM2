@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "VentaControlador", urlPatterns = {"/VentaControlador"})
-public class VentaControlador extends HttpServlet {
+@WebServlet(name = "B1_VentaControlador", urlPatterns = {"/B1_VentaControlador"})
+public class B1_VentaControlador extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -21,7 +21,7 @@ public class VentaControlador extends HttpServlet {
             switch (action) {
                 case "view":
                     //Pasamos el control
-                    request.getRequestDispatcher("areaVentas.jsp").forward(request, response);
+                    request.getRequestDispatcher("b1_ventas.jsp").forward(request, response);
                     break;
                 default:
 

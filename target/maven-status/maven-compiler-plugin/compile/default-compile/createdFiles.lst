@@ -1,7 +1,8 @@
 com\emergentes\modelo\Usuario.class
-com\emergentes\controlador\VentaControlador.class
 com\emergentes\utiles\ConexionBD.class
-com\emergentes\controlador\DashboardControlador.class
+com\emergentes\controlador\A0_IndexControlador.class
+com\emergentes\controlador\B2_ClienteControlador.class
 com\emergentes\controlador\UsuarioControlador.class
 com\emergentes\dao\UsuarioDAOimpl.class
 com\emergentes\dao\UsuarioDAO.class
+com\emergentes\controlador\B1_VentaControlador.class

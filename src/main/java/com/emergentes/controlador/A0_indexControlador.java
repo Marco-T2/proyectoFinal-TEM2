@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "DashboardControlador", urlPatterns = {"/DashboardControlador"})
-public class DashboardControlador extends HttpServlet {
+@WebServlet(name = "A0_IndexControlador", urlPatterns = {"/A0_IndexControlador"})
+public class A0_IndexControlador extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -21,7 +21,7 @@ public class DashboardControlador extends HttpServlet {
             switch (action) {
                 case "view":
                     //Pasamos el control
-                    request.getRequestDispatcher("areaDashboard.jsp").forward(request, response);
+                    request.getRequestDispatcher("a0_index.jsp").forward(request, response);
                     break;
                 default:
 

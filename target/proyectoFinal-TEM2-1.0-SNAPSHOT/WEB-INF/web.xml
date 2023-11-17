@@ -6,6 +6,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>areaVentas.jsp</welcome-file>
+        <welcome-file>A0_IndexControlador</welcome-file>
     </welcome-file-list>
 </web-app>
