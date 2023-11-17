@@ -20,7 +20,7 @@ public class A0_IndexControlador extends HttpServlet {
             
             switch (action) {
                 case "view":
-                    //Pasamos el control
+                    //Pasamos el control 
                     request.getRequestDispatcher("a0_index.jsp").forward(request, response);
                     break;
                 default:

@@ -3,41 +3,47 @@ package com.emergentes.utiles;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ConexionBD {
 
-    static public String driver = "com.mysql.jdbc.Driver";
-    static public String url = "jdbc:mysql://localhost:3306/db";
+    //Establecemos el driver para conectarnos a la base de datos
+    static public String driver = "com.mysql.cj.jdbc.Driver";
+    //Establecer la direccion de conexion
+    static public String url = "jdbc:mysql://localhost:3306/db_sistema";
+    //Establece el Usuario
     static public String usuario = "root";
-    static public String password = "";
+    //Establece la contraseña
+    static public String password = "1234567";
 
-    protected Connection conn = null;
+    //Variable de alcance protected (Permite gestionar la conexion)
+    protected Connection conn = null; //Necesita libreria
 
+    //Creamos el contructori
     public ConexionBD() {
         try {
+            //Especificar el driver de la base de datos
             Class.forName(driver);
+            //Mandamos lo parametro sde connexion
             conn = DriverManager.getConnection(url, usuario, password);
-
         } catch (ClassNotFoundException ex) {
-            System.out.println("Error en el driver: " + ex.getMessage());
-            //Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE,null,ex);
+            System.out.println("Error en el Driver"+ex.getMessage());
         } catch (SQLException ex) {
-            System.out.println("Error en el conexion: " + ex.getMessage());
-            //Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE,null,ex);
+            System.out.println("Error al realizar la conexion"+ex.getMessage());
         }
     }
 
+    //Creamos un metodo para devolvernos la conexion
     public Connection conectar() {
+        //Retornar el valor de la propiedad conexion
         return conn;
     }
 
+    //Creamos un metodo para desconectar o cerrar
     public void desconectar() {
         try {
             conn.close();
         } catch (SQLException ex) {
-            System.out.println("Error al cerrar la conexion: " + ex.getMessage());
+            System.out.println("Error al cerrar la conexion: "+ex.getMessage());
         }
     }
 }

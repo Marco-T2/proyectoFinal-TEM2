@@ -4,8 +4,12 @@
  */
 package com.emergentes.controlador;
 
+import com.emergentes.dao.PersonaDAO;
+import com.emergentes.dao.PersonaDAOimpl;
+import com.emergentes.modelo.Persona;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,23 +26,85 @@ public class B2_ClienteControlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //Permite evaluar el prametro
-        String action = (request.getParameter("action") != null) ? request.getParameter("action") : "view";
+        try {
+            //Permite evaluar el prametro
+            String action = (request.getParameter("action") != null) ? request.getParameter("action") : "view";
+            PersonaDAO dao = new PersonaDAOimpl();
+            Persona per = new Persona();
+            int id;
 
-        switch (action) {
-            case "view":
-                //Pasamos el control
-                request.getRequestDispatcher("b2_clientes.jsp").forward(request, response);
-                break;
-            default:
+            switch (action) {
+                case "add":
+                    /*request.setAttribute("cliente", per);
+                request.getRequestDispatcher("frmcliente.jsp").forward(request, response);*/
+                    break;
+                case "edit":
+                    /*id = Integer.parseInt(request.getParameter("id"));
+                per = dao.getById(id);
+                request.setAttribute("cliente", per);
+                request.getRequestDispatcher("frmcliente.jsp").forward(request, response);*/
+                    break;
+                case "delete":
+                /*id = Integer.parseInt(request.getParameter("id"));
+                dao.delete(id);
+                response.sendRedirect("B2_ClienteControlador");
+                break;*/
+                case "view":
+                    //obtener la lista de objetos (registros)
+                    List<Persona> lista = dao.getAll();
+                    //Ponerlo como atributo de lista
+                    request.setAttribute("clientes", lista);
+                    //Pasamos el control
+                    request.getRequestDispatcher("b2_clientes.jsp").forward(request, response);
+                    break;
+                default:
 
-                break;
+                    break;
+            }
+        } catch (Exception e) {
+            System.out.println("Error :" + e.getMessage());
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        int idpersona = Integer.parseInt(request.getParameter("idpersona"));
+        String tipo_persona = request.getParameter("tipo_persona");
+        String nombre = request.getParameter("nombre");
+        String ci_documento = request.getParameter("ci_documento");
+        String direccion = request.getParameter("direccion");
+        String telefono = request.getParameter("telefono");
+        String email = request.getParameter("email");
+
+        Persona per = new Persona();
+
+        per.setIdpersona(idpersona);
+        per.setTipo_persona(tipo_persona);
+        per.setNombre(nombre);
+        per.setCi_documento(ci_documento);
+        per.setDireccion(direccion);
+        per.setTelefono(telefono);
+        per.setEmail(email);
+
+        PersonaDAO dao = new PersonaDAOimpl();
+        if (idpersona == 0) {
+            try {
+                // Nuevo registro
+                dao.insert(per);
+            } catch (Exception ex) {
+                System.out.println("Error al insertar " + ex.getMessage());
+            }
+        } else {
+            try {
+                // Edicion de registro
+                dao.update(per);
+            } catch (Exception ex) {
+                System.out.println("Error al editar " + ex.getMessage());
+            }
+        }
+        response.sendRedirect("B2_ClienteControlador");
 
     }
 

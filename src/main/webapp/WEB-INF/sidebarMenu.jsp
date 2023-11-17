@@ -48,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="B2_ClienteControlador" class="nav-link">
+                        <a href="B2_ClienteControlador" class="nav-link <%=(opcion.equals("clientes") ? "active" : "")%>">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Clientes</p>
                         </a>
