@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- 
     Document   : newjsp
     Created on : 9 nov 2023, 8:29:22
@@ -20,6 +21,9 @@
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- DataTable CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+
     </head>
     <!--
     `body` tag options:
@@ -120,15 +124,79 @@
 
                     <!-- Main content -->
                     <div class="content">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <!-- TODO CONTENIDO -->
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.container-fluid -->
+                        <section class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- /ESTO SE TIENE QUE MODIFICAR -->
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Tabla de proveedores</h3>
+                                            </div>
+                                            <!-- /.card-header -->
+                                            <div class="card-body">
+                                                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="dt-buttons btn-group flex-wrap">
+                                                                <a href="C2_ProveedorControlador?action=add">
+                                                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                                                        Nuevo
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Id</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Tipo Pesona</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Nombre</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">CI</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Direccion</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Telefono</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Email</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <c:forEach var="item" items="${proveedores}">
+                                                                        <tr class="odd">
+                                                                            <td class="dtr-control sorting_1" tabindex="0">${item.idpersona}</td>
+                                                                            <td>${item.tipo_persona}</td>
+                                                                            <td>${item.nombre}</td>
+                                                                            <td>${item.ci_documento}</td>
+                                                                            <td>${item.direccion}</td>
+                                                                            <td>${item.telefono}</td>
+                                                                            <td>${item.email}</td>
+                                                                            <td><a href="C2_ProveedorControlador?action=edit&idpersona=${item.idpersona}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a></td>
+                                                                            <td><a href="C2_ProveedorControlador?action=delete&idpersona=${item.idpersona}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
+                                                                        </tr>                                                                   
+                                                                    </c:forEach>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /ESTO SE TIENE QUE MODIFICAR -->
+                                            <!-- /.card -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.container-fluid -->
+                        </section>
                     </div>
-                    <!-- /.content -->
+                    <!-- /.Main content -->
                 </div>
                 <!-- /.content-wrapper -->
 
@@ -140,14 +208,83 @@
 
                 <!-- Main Footer -->
                 <footer class="main-footer">
-                    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">TEM - 2</a>.</strong>
-                    All rights reserved.
+                    <strong>Copyright &copy; 2023 <a href="https://adminlte.io">TEM - 2</a>.</strong>
+                    Todos los derechos reservados.
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 0.1.0
                     </div>
                 </footer>
         </div>
-        <!-- ./wrapper -->
+
+
+        <!-- MODAL -->
+        <div class="modal fade" id="modal-lg">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Informacion cliente</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="#" method="post">
+                        <input type="hidden" name="id" value="${cliente.idpersona}">
+                        <div class="modal-body">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Tipo persona</label>
+                                    <input type="text" value="${cliente.tipo_persona}" class="form-control" placeholder="Enter ...">
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            <input type="text" value="${cliente.nombre}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Carnet de Identidad</label>
+                                            <input type="text" value="${cliente.ci_documento}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Direccion</label>
+                                            <input type="text" value="${cliente.direccion}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Telefono</label>
+                                            <input type="text" value="${cliente.telefono}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Correo</label>
+                                    <input type="text" value="${cliente.email}" class="form-control" placeholder="Enter ...">
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </div>
+        <!-- MODAL -->                       
 
         <!-- REQUIRED SCRIPTS -->
 
@@ -164,5 +301,18 @@
         <script src="dist/js/demo.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="dist/js/pages/dashboard3.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+                                                                                $(document).ready(function () {
+                                                                                    $('#example1').DataTable();
+                                                                                });
+        </script>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     </body>
 </html>

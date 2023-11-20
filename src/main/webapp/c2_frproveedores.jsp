@@ -139,50 +139,65 @@
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="dt-buttons btn-group flex-wrap">
-                                                                <a href="C2_ProveedorControlador?action=add">
+                                                                <a href="C2_ProveedorControlador?action=view">
                                                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
-                                                                        Nuevo
+                                                                        Regresar
                                                                     </button>
                                                                 </a>
+                                                            </div>                                                            
+                                                        </div>    
+                                                    </div>                                                    
+                                                    <form action="C2_ProveedorControlador" method="post">
+                                                        <input type="hidden" name="idpersona" value="${proveedor.idpersona}">
+
+                                                        <div class="card-body">
+                                                            <div class="form-group">
+                                                                <label>Tipo persona</label>
+                                                                <input type="text" name="tipo_persona" value="${proveedor.tipo_persona != null ? 'Proveedor' : proveedor.tipo_persona}" class="form-control"  readonly>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Nombre</label>
+                                                                        <input type="text" name="nombre" value="${proveedor.nombre}" class="form-control" placeholder="Ingresa el nombre">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Carnet de Identidad</label>
+                                                                        <input type="number" name="ci_documento" value="${proveedor.ci_documento}" class="form-control" placeholder="Ingresa tu CI">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Direccion</label>
+                                                                        <input type="text" name="direccion" value="${proveedor.direccion}" class="form-control" placeholder="Ingresa el departamento">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Telefono</label>
+                                                                        <input type="number" name="telefono" value="${proveedor.telefono}" class="form-control" placeholder="Ingresa Nro telefono o Celular">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- text input -->
+                                                            <div class="form-group">
+                                                                <label>Correo</label>
+                                                                <input type="email" name="email" value="${proveedor.email}" class="form-control" placeholder="Ingresa tu correo">
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <br>
-                                                    <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Id</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Tipo Pesona</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Nombre</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">CI</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Direccion</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Telefono</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Email</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <c:forEach var="item" items="${proveedores}">
-                                                                        <tr class="odd">
-                                                                            <td class="dtr-control sorting_1" tabindex="0">${item.idpersona}</td>
-                                                                            <td>${item.tipo_persona}</td>
-                                                                            <td>${item.nombre}</td>
-                                                                            <td>${item.ci_documento}</td>
-                                                                            <td>${item.direccion}</td>
-                                                                            <td>${item.telefono}</td>
-                                                                            <td>${item.email}</td>
-                                                                            <td><a href="C2_ProveedorControlador?action=edit&idpersona=${item.idpersona}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a></td>
-                                                                            <td><a href="C2_ProveedorControlador?action=delete&idpersona=${item.idpersona}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
-                                                                        </tr>                                                                   
-                                                                    </c:forEach>
-                                                                </tbody>
-                                                            </table>
+                                                        <div class="modal-footer justify-content-between">
+                                                            <button type="submit" class="btn btn-primary">Guardar</button>
                                                         </div>
-                                                    </div>
 
+                                                    </form>
                                                 </div>
                                                 <!-- /.card-body -->
                                             </div>
@@ -215,77 +230,7 @@
                     </div>
                 </footer>
         </div>
-
-
-        <!-- MODAL -->
-        <div class="modal fade" id="modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Informacion cliente</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form action="#" method="post">
-                        <input type="hidden" name="id" value="${cliente.idpersona}">
-                        <div class="modal-body">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Tipo persona</label>
-                                    <input type="text" value="${cliente.tipo_persona}" class="form-control" placeholder="Enter ...">
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Nombre</label>
-                                            <input type="text" value="${cliente.nombre}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Carnet de Identidad</label>
-                                            <input type="text" value="${cliente.ci_documento}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Direccion</label>
-                                            <input type="text" value="${cliente.direccion}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Telefono</label>
-                                            <input type="text" value="${cliente.telefono}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Correo</label>
-                                    <input type="text" value="${cliente.email}" class="form-control" placeholder="Enter ...">
-                                </div>
-                            </div>
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-        </div>
-        <!-- MODAL -->                       
-
+        <!-- ./wrapper -->
         <!-- REQUIRED SCRIPTS -->
 
         <!-- jQuery -->
@@ -305,11 +250,6 @@
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
-        <script>
-                                                                                $(document).ready(function () {
-                                                                                    $('#example1').DataTable();
-                                                                                });
-        </script>
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

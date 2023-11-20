@@ -4,8 +4,8 @@
  */
 package com.emergentes.controlador;
 
-import com.emergentes.dao.PersonaDAO;
-import com.emergentes.dao.PersonaDAOimpl;
+import com.emergentes.dao.ClienteDAO;
+import com.emergentes.dao.ClienteDAOimpl;
 import com.emergentes.modelo.Persona;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,7 +29,7 @@ public class B2_ClienteControlador extends HttpServlet {
         try {
             //Permite evaluar el prametro
             String action = (request.getParameter("action") != null) ? request.getParameter("action") : "view";
-            PersonaDAO dao = new PersonaDAOimpl();
+            ClienteDAO dao = new ClienteDAOimpl();
             Persona per = new Persona();
             int id;
 
@@ -88,7 +88,7 @@ public class B2_ClienteControlador extends HttpServlet {
         per.setTelefono(telefono);
         per.setEmail(email);
 
-        PersonaDAO dao = new PersonaDAOimpl();
+        ClienteDAO dao = new ClienteDAOimpl();
         if (idpersona == 0) {
             try {
                 // Nuevo registro

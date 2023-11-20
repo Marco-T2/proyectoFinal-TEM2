@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonaDAOimpl extends ConexionBD implements PersonaDAO {
+public class ProveedorDAOimpl extends ConexionBD implements ProveedorDAO {
 
     @Override
     public void insert(Persona persona) throws Exception {
@@ -113,7 +113,7 @@ public class PersonaDAOimpl extends ConexionBD implements PersonaDAO {
         try {
             //Como es una extencion de conectar se paso todos los metodos para utilizar
             this.conectar();
-            String sql = "select * from persona";
+            String sql = "select * from persona where tipo_persona = 'Proveedor'";
             PreparedStatement ps = this.conn.prepareStatement(sql);
 
             //Se tiene el resultado en rs    
@@ -146,4 +146,5 @@ public class PersonaDAOimpl extends ConexionBD implements PersonaDAO {
         }
         return lista;
     }
+
 }
