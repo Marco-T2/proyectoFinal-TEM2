@@ -139,11 +139,11 @@
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="dt-buttons btn-group flex-wrap">
-                                                                <a href="#?action=add">
-                                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
-                                                                    Nuevo
-                                                                </button>
-                                                                    </a>
+                                                                <a href="B2_ClienteControlador?action=add">
+                                                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                                                        Nuevo
+                                                                    </button>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -174,8 +174,8 @@
                                                                             <td>${item.direccion}</td>
                                                                             <td>${item.telefono}</td>
                                                                             <td>${item.email}</td>
-                                                                            <td><a href="ProductoControlador?action=edit&id=${item.idpersona}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a></td>
-                                                                            <td><a href="ProductoControlador?action=delete&id=${item.idpersona}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
+                                                                            <td><a href="B2_ClienteControlador?action=edit&idpersona=${item.idpersona}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a></td>
+                                                                            <td><a href="B2_ClienteControlador?action=delete&idpersona=${item.idpersona}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
                                                                         </tr>                                                                   
                                                                     </c:forEach>
                                                                 </tbody>
@@ -215,7 +215,9 @@
                     </div>
                 </footer>
         </div>
-        <!-- ./wrapper -->
+
+
+        <!-- MODAL -->
         <div class="modal fade" id="modal-lg">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -225,87 +227,92 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label>Tipo persona</label>
-                                <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                    <form action="#" method="post">
+                        <input type="hidden" name="id" value="${cliente.idpersona}">
+                        <div class="modal-body">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Tipo persona</label>
+                                    <input type="text" value="${cliente.tipo_persona}" class="form-control" placeholder="Enter ...">
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            <input type="text" value="${cliente.nombre}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Carnet de Identidad</label>
+                                            <input type="text" value="${cliente.ci_documento}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Direccion</label>
+                                            <input type="text" value="${cliente.direccion}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group">
+                                            <label>Telefono</label>
+                                            <input type="text" value="${cliente.telefono}" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>Correo</label>
+                                    <input type="text" value="${cliente.email}" class="form-control" placeholder="Enter ...">
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Nombre</label>
-                                        <input type="text" class="form-control" placeholder="Enter ...">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Carnet de Identidad</label>
-                                        <input type="text" class="form-control" placeholder="Enter ...">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Direccion</label>
-                                        <input type="text" class="form-control" placeholder="Enter ...">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <!-- text input -->
-                                    <div class="form-group">
-                                        <label>Telefono</label>
-                                        <input type="text" class="form-control" placeholder="Enter ...">
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- text input -->
-                            <div class="form-group">
-                                <label>Correo</label>
-                                <input type="text" class="form-control" placeholder="Enter ...">
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
                             </div>
                         </div>
-                        <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Guardar</button>
-                        </div>
-                    </div>
+                    </form>
                     <!-- /.modal-content -->
                 </div>
                 <!-- /.modal-dialog -->
             </div>
-            <!-- /.modal -->
-            <!-- REQUIRED SCRIPTS -->
+        </div>
+        <!-- MODAL -->                       
 
-            <!-- jQuery -->
-            <script src="plugins/jquery/jquery.min.js"></script>
-            <!-- Bootstrap -->
-            <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <!-- AdminLTE -->
-            <script src="dist/js/adminlte.js"></script>
+        <!-- REQUIRED SCRIPTS -->
 
-            <!-- OPTIONAL SCRIPTS -->
-            <script src="plugins/chart.js/Chart.min.js"></script>
-            <!-- AdminLTE for demo purposes -->
-            <script src="dist/js/demo.js"></script>
-            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-            <script src="dist/js/pages/dashboard3.js"></script>
+        <!-- jQuery -->
+        <script src="plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE -->
+        <script src="dist/js/adminlte.js"></script>
 
-            <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-            <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-            <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
-            <script>
+        <!-- OPTIONAL SCRIPTS -->
+        <script src="plugins/chart.js/Chart.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="dist/js/demo.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="dist/js/pages/dashboard3.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+        <script>
                                                                                 $(document).ready(function () {
                                                                                     $('#example1').DataTable();
                                                                                 });
-            </script>
+        </script>
 
-            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     </body>
 </html>

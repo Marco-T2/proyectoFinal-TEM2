@@ -11,7 +11,15 @@ public class Persona {
     private String email;
 
     public Persona() {
+        this.idpersona = 0;
+        this.tipo_persona = "";
+        this.nombre = "";
+        this.ci_documento = "";
+        this.direccion = "";
+        this.telefono = "";
+        this.email = "";
     }
+
 
     public int getIdpersona() {
         return idpersona;
@@ -73,6 +81,5 @@ public class Persona {
     public String toString() {
         return "Persona{" + "idpersona=" + idpersona + ", tipo_persona=" + tipo_persona + ", nombre=" + nombre + ", ci_documento=" + ci_documento + ", direccion=" + direccion + ", telefono=" + telefono + ", email=" + email + '}';
     }
-    
-    
+
 }

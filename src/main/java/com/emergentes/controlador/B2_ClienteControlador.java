@@ -36,19 +36,19 @@ public class B2_ClienteControlador extends HttpServlet {
             switch (action) {
                 case "add":
                     request.setAttribute("cliente", per);
-                request.getRequestDispatcher("frmcliente.jsp").forward(request, response);
+                    request.getRequestDispatcher("b2_frclientes.jsp").forward(request, response);
                     break;
                 case "edit":
-                    /*id = Integer.parseInt(request.getParameter("id"));
-                per = dao.getById(id);
-                request.setAttribute("cliente", per);
-                request.getRequestDispatcher("frmcliente.jsp").forward(request, response);*/
+                    id = Integer.parseInt(request.getParameter("idpersona"));
+                    per = dao.getById(id);
+                    request.setAttribute("cliente", per);
+                    request.getRequestDispatcher("b2_frclientes.jsp").forward(request, response);
                     break;
                 case "delete":
-                /*id = Integer.parseInt(request.getParameter("id"));
-                dao.delete(id);
-                response.sendRedirect("B2_ClienteControlador");
-                break;*/
+                    id = Integer.parseInt(request.getParameter("idpersona"));
+                    dao.delete(id);
+                    response.sendRedirect("B2_ClienteControlador");
+                    break;
                 case "view":
                     //obtener la lista de objetos (registros)
                     List<Persona> lista = dao.getAll();
@@ -69,7 +69,7 @@ public class B2_ClienteControlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+       
         int idpersona = Integer.parseInt(request.getParameter("idpersona"));
         String tipo_persona = request.getParameter("tipo_persona");
         String nombre = request.getParameter("nombre");
