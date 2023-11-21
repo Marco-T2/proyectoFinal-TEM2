@@ -134,7 +134,7 @@
                                                 <h3 class="card-title">Tabla de clientes</h3>
                                             </div>
                                             <!-- /.card-header -->
-                                            <div class="card-body">
+                                            <div class="card-body"> 
                                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">
@@ -159,7 +159,7 @@
                                                                 <div class="col-sm-6">
                                                                     <!-- text input -->
                                                                     <div class="form-group">
-                                                                        <label>Nombre</label>
+                                                                        <label>Nombre Apellido</label>
                                                                         <input type="text" name="nombre" value="${cliente.nombre}" class="form-control" placeholder="Ingresa el nombre">
                                                                     </div>
                                                                 </div>
