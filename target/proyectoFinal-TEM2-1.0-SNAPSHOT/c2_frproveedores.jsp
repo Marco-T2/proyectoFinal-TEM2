@@ -159,7 +159,7 @@
                                                                 <div class="col-sm-6">
                                                                     <!-- text input -->
                                                                     <div class="form-group">
-                                                                        <label>Nombre</label>
+                                                                        <label>Nombre y apellido</label>
                                                                         <input type="text" name="nombre" value="${proveedor.nombre}" class="form-control" placeholder="Ingresa el nombre">
                                                                     </div>
                                                                 </div>
