@@ -153,13 +153,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/tables/simple.html" class="nav-link">
+                        <a href="H1_UsuarioControlador" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Usuarios</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/tables/data.html" class="nav-link">
+                        <a href="H2_PermisoControlador" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Permisos</p>
                         </a>
