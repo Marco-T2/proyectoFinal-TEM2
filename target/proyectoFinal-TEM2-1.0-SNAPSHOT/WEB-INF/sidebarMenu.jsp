@@ -159,9 +159,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="H2_PermisoControlador" class="nav-link">
+                        <a href="RolControlador" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Permisos</p>
+                            <p>Rol</p>
                         </a>
                     </li>
                 </ul>
