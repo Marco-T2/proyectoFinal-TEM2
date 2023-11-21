@@ -1,5 +1,4 @@
-<%-- 
-    Document   : newjsp
+t   : newjsp
     Created on : 9 nov 2023, 8:29:22
     Author     : marco
 --%>
@@ -95,7 +94,7 @@
                 </a>
 
                 <jsp:include page="WEB-INF/sidebarMenu.jsp">
-                    <jsp:param name="opcion" value="h1_usuarios"/>
+                    <jsp:param name="opcion" value="h2_permisos"/>
                 </jsp:include>
 
                 <!-- Content Wrapper. Contains page content -->
@@ -105,12 +104,12 @@
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h1 class="m-0">Usuario</h1>
+                                    <h1 class="m-0">Permiso</h1>
                                 </div><!-- /.col -->
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
                                         <li class="breadcrumb-item"><a href="#">Accesos</a></li>
-                                        <li class="breadcrumb-item active">Usuario</li>
+                                        <li class="breadcrumb-item active">Permiso</li>
                                     </ol>
                                 </div><!-- /.col -->
                             </div><!-- /.row -->
