@@ -1,9 +1,10 @@
-<%-- 
-    Document   : newjsp
-    Created on : 9 nov 2023, 8:29:22
-    Author     : marco
---%>
+<%
+    if (session.getAttribute("login") != "OK") {
+        response.sendRedirect("login.jsp");
+    }
+%>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,15 +22,6 @@
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
     </head>
-    <!--
-    `body` tag options:
-    
-      Apply one or more of the following classes to to the body tag
-      to get the desired effect
-    
-      * sidebar-collapse
-      * sidebar-mini
-    -->
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->

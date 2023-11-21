@@ -1,10 +1,9 @@
+<%
+    if (session.getAttribute("login") != "OK") {
+        response.sendRedirect("login.jsp");
+    }
+%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- 
-    Document   : newjsp
-    Created on : 9 nov 2023, 8:29:22
-    Author     : marco
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -214,77 +213,7 @@
                         <b>Version</b> 0.1.0
                     </div>
                 </footer>
-        </div>
-
-
-        <!-- MODAL -->
-        <div class="modal fade" id="modal-lg">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Informacion cliente</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form action="#" method="post">
-                        <input type="hidden" name="id" value="${cliente.idpersona}">
-                        <div class="modal-body">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>Tipo persona</label>
-                                    <input type="text" value="${cliente.tipo_persona}" class="form-control" placeholder="Enter ...">
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Nombre</label>
-                                            <input type="text" value="${cliente.nombre}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Carnet de Identidad</label>
-                                            <input type="text" value="${cliente.ci_documento}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Direccion</label>
-                                            <input type="text" value="${cliente.direccion}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!-- text input -->
-                                        <div class="form-group">
-                                            <label>Telefono</label>
-                                            <input type="text" value="${cliente.telefono}" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Correo</label>
-                                    <input type="text" value="${cliente.email}" class="form-control" placeholder="Enter ...">
-                                </div>
-                            </div>
-                            <div class="modal-footer justify-content-between">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-            </div>
-        </div>
-        <!-- MODAL -->                       
+        </div>                    
 
         <!-- REQUIRED SCRIPTS -->
 

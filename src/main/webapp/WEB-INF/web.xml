@@ -6,6 +6,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>A0_IndexControlador</welcome-file>
+        <welcome-file>Login</welcome-file>
     </welcome-file-list>
 </web-app>
