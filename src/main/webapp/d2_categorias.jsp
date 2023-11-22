@@ -152,8 +152,8 @@
                                                                             <td class="dtr-control sorting_1" tabindex="0">${item.idcategoria}</td>
                                                                             <td>${item.nombre}</td>
                                                                             <td>${item.descripcion}</td>
-                                                                            <td><a href="D2_CategoriaControlador?action=edit&idrol=${item.idcategoria}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
-                                                                                <a href="D2_CategoriaControlador?action=delete&idrol=${item.idcategoria}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
+                                                                            <td><a href="D2_CategoriaControlador?action=edit&idcategoria=${item.idcategoria}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
+                                                                                <a href="D2_CategoriaControlador?action=delete&idcategoria=${item.idcategoria}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
                                                                         </tr>                                                                   
                                                                     </c:forEach>
                                                                 </tbody>

@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
         <!-- DataTable CSS -->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
-
     </head>
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
@@ -88,7 +87,7 @@
                 </a>
 
                 <jsp:include page="WEB-INF/sidebarMenu.jsp">
-                    <jsp:param name="opcion" value="categorias"/>
+                    <jsp:param name="opcion" value="articulo"/>
                 </jsp:include>
 
                 <!-- Content Wrapper. Contains page content -->
@@ -98,12 +97,12 @@
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h1 class="m-0">Categorias</h1>
+                                    <h1 class="m-0">Articulos</h1>
                                 </div><!-- /.col -->
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
-                                        <li class="breadcrumb-item"><a href="#">Categorias</a></li>
-                                        <li class="breadcrumb-item active">Categoria</li>
+                                        <li class="breadcrumb-item"><a href="D1_ArticuloControlador?action=view">Articulos</a></li>
+                                        <li class="breadcrumb-item active">Articulo</li>
                                     </ol>
                                 </div><!-- /.col -->
                             </div><!-- /.row -->
@@ -120,48 +119,80 @@
                                         <!-- /ESTO SE TIENE QUE MODIFICAR -->
                                         <div class="card">
                                             <div class="card-header">
-                                                <h3 class="card-title">Listado de Categoria</h3>
+                                                <h3 class="card-title">Crear nuevo articulo</h3>
                                             </div>
                                             <!-- /.card-header -->
-                                            <div class="card-body">
+                                            <div class="card-body"> 
                                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="dt-buttons btn-group flex-wrap">
-                                                                <a href="D2_CategoriaControlador?action=add" >
-                                                                    <button type="button" class="btn btn-default">Nuevo</button>
+                                                                <a href="D1_ArticuloControlador?action=view">
+                                                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                                                        Regresar
+                                                                    </button>
                                                                 </a>
+                                                            </div>                                                            
+                                                        </div>    
+                                                    </div>                                                    
+                                                    <form action="D1_ArticuloControlador" method="post">
+                                                        <input type="hidden" name="idarticulo" value="${articulo.idarticulo}">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Código</label>
+                                                                        <input type="text" name="codigo" value="${articulo.codigo}" class="form-control" placeholder="Ingresa código">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Nombre de artículo</label>
+                                                                        <input type="text" name="nombre" value="${articulo.nombre}" class="form-control" placeholder="Ingresa nombre de artículo">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Stock</label>
+                                                                        <input type="numeric" name="stock" value="${articulo.stock}" class="form-control" placeholder="Ingresa el stock">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Descripcion</label>
+                                                                        <input type="text" name="descripcion" value="${articulo.descripcion}" class="form-control" placeholder="Ingresa una descripción">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="form-group">
+                                                                <label>Categoria</label>
+                                                                <select name="idcategoria" class="form-control">
+                                                                    <option value="">--Seleccione--</option>
+                                                                    <c:forEach var="item" items="${lista_categorias}">
+                                                                        <option value="${item.idcategoria}" 
+                                                                                <c:if test="${articulo.idcategoria== item.idcategoria}">
+                                                                                    selected
+                                                                                </c:if>
+                                                                                >${item.nombre}</option>                            
+                                                                    </c:forEach>
+                                                                </select>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <br>
-                                                    <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">NOMBRE</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">DESCRIPCION</th>
-                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">ACCIONES</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <c:forEach var="item" items="${categorias}">
-                                                                        <tr class="odd">
-                                                                            <td class="dtr-control sorting_1" tabindex="0">${item.idcategoria}</td>
-                                                                            <td>${item.nombre}</td>
-                                                                            <td>${item.descripcion}</td>
-                                                                            <td><a href="D2_CategoriaControlador?action=edit&idcategoria=${item.idcategoria}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
-                                                                                <a href="D2_CategoriaControlador?action=delete&idcategoria=${item.idcategoria}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
-                                                                        </tr>                                                                   
-                                                                    </c:forEach>
-                                                                </tbody>
-                                                            </table>
+                                                        <div class="modal-footer justify-content-between">
+                                                            <button type="submit" class="btn btn-primary">Guardar</button>
                                                         </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
-                                            </div><!--fin de card-boody-->
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /ESTO SE TIENE QUE MODIFICAR -->
                                             <!-- /.card -->
                                         </div>
                                         <!-- /.col -->
@@ -174,6 +205,7 @@
                     <!-- /.Main content -->
                 </div>
                 <!-- /.content-wrapper -->
+
                 <!-- Main Footer -->
                 <footer class="main-footer">
                     <strong>Copyright &copy; 2023 <a href="https://adminlte.io">TEM - 2</a>.</strong>
@@ -183,6 +215,7 @@
                     </div>
                 </footer>
         </div>
+        <!-- ./wrapper -->
         <!-- REQUIRED SCRIPTS -->
         <!-- jQuery -->
         <script src="plugins/jquery/jquery.min.js"></script>
@@ -201,11 +234,7 @@
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
-        <script>
-                                                                                    $(document).ready(function () {
-                                                                                        $('#example1').DataTable();
-                                                                                    });
-        </script>
+
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
