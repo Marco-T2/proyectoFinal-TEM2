@@ -3,7 +3,7 @@
         response.sendRedirect("login.jsp");
     }
 %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>AdminLTE 3 | Dashboard 3</title>
-
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome Icons -->
@@ -20,16 +19,10 @@
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
+        <!-- DataTable CSS -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+
     </head>
-    <!--
-    `body` tag options:
-    
-      Apply one or more of the following classes to to the body tag
-      to get the desired effect
-    
-      * sidebar-collapse
-      * sidebar-mini
-    -->
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->
@@ -95,7 +88,7 @@
                 </a>
 
                 <jsp:include page="WEB-INF/sidebarMenu.jsp">
-                    <jsp:param name="opcion" value="b1_ventas"/>
+                    <jsp:param name="opcion" value="usuarios"/>
                 </jsp:include>
 
                 <!-- Content Wrapper. Contains page content -->
@@ -110,7 +103,7 @@
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
                                         <li class="breadcrumb-item"><a href="#">Ventas</a></li>
-                                        <li class="breadcrumb-item active">Ventas</li>
+                                        <li class="breadcrumb-item active">Venta</li>
                                     </ol>
                                 </div><!-- /.col -->
                             </div><!-- /.row -->
@@ -120,15 +113,76 @@
 
                     <!-- Main content -->
                     <div class="content">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <!-- TODO CONTENIDO -->
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.container-fluid -->
+                        <section class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- /ESTO SE TIENE QUE MODIFICAR -->
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Listado de ventas</h3>
+                                            </div>
+                                            <!-- /.card-header -->
+                                            <div class="card-body">
+                                                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <div class="dt-buttons btn-group flex-wrap">
+                                                                <a href="B1_VentaControlador?action=add" >
+                                                                    <button type="button" class="btn btn-default">Nuevo</button>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" aria-describedby="example1_info">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">FECHA</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">CLIENTE</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">USUARIO</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">DOCUMENTO</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">NUMERO</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">TOTAL VENTA</th>
+                                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">ACCIONES</th>
+                                                                      </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <c:forEach var="item" items="${ventas}">
+                                                                        <tr class="odd">
+                                                                            <td class="dtr-control sorting_1" tabindex="0">${item.idventa}</td>
+                                                                            <td>${item.fecha_hora}</td>
+                                                                            <td>${item.cliente}</td>
+                                                                            <td>${item.usuario}</td>
+                                                                            <td>${item.tipo_comprobante}</td>
+                                                                            <td>${item.num_comprobante}</td>
+                                                                            <td>${item.total_venta}</td>
+                                                                            <td><a href="B1_VentaControlador?action=edit&idventa=${item.idventa}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
+                                                                            <a href="B1_VentaControlador?action=delete&idventa=${item.idventa}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
+                                                                        </tr>                                                                   
+                                                                    </c:forEach>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                            <!-- /ESTO SE TIENE QUE MODIFICAR -->
+                                            <!-- /.card -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.container-fluid -->
+                        </section>
                     </div>
-                    <!-- /.content -->
+                    <!-- /.Main content -->
                 </div>
                 <!-- /.content-wrapper -->
 
@@ -137,11 +191,10 @@
                     <!-- Control sidebar content goes here -->
                 </aside>
                 <!-- /.control-sidebar -->
-
                 <!-- Main Footer -->
                 <footer class="main-footer">
-                    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">TEM - 2</a>.</strong>
-                    All rights reserved.
+                    <strong>Copyright &copy; 2023 <a href="https://adminlte.io">TEM - 2</a>.</strong>
+                    Todos los derechos reservados.
                     <div class="float-right d-none d-sm-inline-block">
                         <b>Version</b> 0.1.0
                     </div>
@@ -152,8 +205,6 @@
                 </jsp:include>       
                 
         </div>
-        <!-- ./wrapper -->
-
         <!-- REQUIRED SCRIPTS -->
 
         <!-- jQuery -->
@@ -169,5 +220,18 @@
         <script src="dist/js/demo.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="dist/js/pages/dashboard3.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+                                                                                $(document).ready(function () {
+                                                                                    $('#example1').DataTable();
+                                                                                });
+        </script>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     </body>
 </html>
