@@ -57,6 +57,7 @@ public class B2_ClienteControlador extends HttpServlet {
                     //Pasamos el control
                     request.getRequestDispatcher("b2_clientes.jsp").forward(request, response);
                     break;
+
                 default:
 
                     break;
@@ -69,7 +70,7 @@ public class B2_ClienteControlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
         int idpersona = Integer.parseInt(request.getParameter("idpersona"));
         String tipo_persona = request.getParameter("tipo_persona");
         String nombre = request.getParameter("nombre");
