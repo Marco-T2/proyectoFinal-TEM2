@@ -98,12 +98,12 @@
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <h1 class="m-0">Rol</h1>
+                                    <h1 class="m-0">Categoria</h1>
                                 </div><!-- /.col -->
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
-                                        <li class="breadcrumb-item"><a href="RolControlador">Roles</a></li>
-                                        <li class="breadcrumb-item active">Rol</li>
+                                        <li class="breadcrumb-item"><a href="D2_CategoriaControlador">Categorias</a></li>
+                                        <li class="breadcrumb-item active">Categorias</li>
                                     </ol>
                                 </div><!-- /.col -->
                             </div><!-- /.row -->
@@ -120,7 +120,7 @@
                                         <!-- /ESTO SE TIENE QUE MODIFICAR -->
                                         <div class="card">
                                             <div class="card-header">
-                                                <h3 class="card-title">Crear nuevo rol</h3>
+                                                <h3 class="card-title">Crear nuevo categoria</h3>
                                             </div>
                                             <!-- /.card-header -->
                                             <div class="card-body">
@@ -128,26 +128,26 @@
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">
                                                             <div class="dt-buttons btn-group flex-wrap">
-                                                                <a href="RolControlador?action=view">
+                                                                <a href="D2_CategoriaControlador?action=view">
                                                                     <button type="button" class="btn btn-default">Regresar</button>
                                                                 </a>
                                                             </div>                                                            
                                                         </div>    
                                                     </div>                                                    
-                                                    <form action="RolControlador" method="post">
-                                                        <input type="hidden" name="idrol" value="${rol.idrol}">                                                        <div class="card-body">
+                                                    <form action="D2_CategoriaControlador" method="post">
+                                                        <input type="hidden" name="idcategoria" value="${categoria.idcategoria}">                                                        <div class="card-body">
                                                             <div class="row">
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label>Nombre de rol</label>
-                                                                        <input type="text" name="nombre" value="${rol.nombre}" class="form-control" placeholder="Ingresa el nombre de rol">
+                                                                        <label>Nombre de categoria</label>
+                                                                        <input type="text" name="nombre" value="${categoria.nombre}" class="form-control" placeholder="Ingresa el nombre de categoria">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <!-- text input -->
                                                                     <div class="form-group">
                                                                         <label>Descripción</label>
-                                                                        <input type="text" name="descripcion" value="${rol.descripcion}" class="form-control" placeholder="Ingresa una descripcion">
+                                                                        <input type="text" name="descripcion" value="${categoria.descripcion}" class="form-control" placeholder="Ingresa una descripcion">
                                                                     </div>
                                                                 </div>
                                                             </div>
