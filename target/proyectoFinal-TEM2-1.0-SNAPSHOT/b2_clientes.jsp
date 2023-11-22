@@ -284,8 +284,15 @@
                 </div>
                 <!-- /.modal-dialog -->
             </div>
+                                             
+                                <!-- Main Footer -->
+                <jsp:include page="WEB-INF/footer.jsp">
+                    <jsp:param name="opcion" value="#"/>
+                </jsp:include>
         </div>
-        <!-- MODAL -->                       
+        <!-- MODAL --> 
+        
+        
 
         <!-- REQUIRED SCRIPTS -->
 

@@ -146,6 +146,11 @@
                         <b>Version</b> 0.1.0
                     </div>
                 </footer>
+                <!-- Main Footer -->
+                <jsp:include page="WEB-INF/footer.jsp">
+                    <jsp:param name="opcion" value="#"/>
+                </jsp:include>       
+                
         </div>
         <!-- ./wrapper -->
 
