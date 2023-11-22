@@ -145,7 +145,17 @@
                                                                         Nuevo
                                                                     </button>
                                                                 </a>
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="reportes/b2_reporteClientes.jsp">
+                                                                        <button type="button" class="btn btn-success">
+                                                                            <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+
+                                                                        </button>
+                                                                    </a>
+                                                                </div>  
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                     <br>
@@ -284,15 +294,15 @@
                 </div>
                 <!-- /.modal-dialog -->
             </div>
-                                             
-                                <!-- Main Footer -->
-                <jsp:include page="WEB-INF/footer.jsp">
-                    <jsp:param name="opcion" value="#"/>
-                </jsp:include>
+
+            <!-- Main Footer -->
+            <jsp:include page="WEB-INF/footer.jsp">
+                <jsp:param name="opcion" value="#"/>
+            </jsp:include>
         </div>
         <!-- MODAL --> 
-        
-        
+
+
 
         <!-- REQUIRED SCRIPTS -->
 
