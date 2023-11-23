@@ -70,24 +70,31 @@ public class Detalle_ventaDAOimpl extends ConexionBD implements Detalle_ventaDAO
     public List<Detalle_venta> getAllId(int id) throws Exception {
         List<Detalle_venta> lista = null;
         try {
+            //Como es una extencion de conectar se paso todos los metodos para utilizar
             this.conectar();
             String sql = "select dv.*,a.nombre as articulo,(dv.cantidad*dv.precio_venta-dv.descuento) as subtotal from detalle_venta dv LEFT join articulo a on dv.idarticulo=a.idarticulo where dv.idventa=?";
             PreparedStatement ps = this.conn.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             lista = new ArrayList<Detalle_venta>();
+            //Cambiamos el if por while al ser mas de un registro
             while (rs.next()) {
-                Detalle_venta d_ven = new Detalle_venta();
-                d_ven.setIddetalle_venta(rs.getInt("iddetalle_venta"));
-                d_ven.setIdventa(rs.getInt("idventa"));
-                d_ven.setIdarticulo(rs.getInt("idarticulo"));
-                d_ven.setCantidad(rs.getInt("cantidad"));
-                d_ven.setPrecio_venta(rs.getDouble("precio_venta"));
-                d_ven.setDescuento(rs.getDouble("descuento"));
-                d_ven.setArticulo(rs.getString("articulo"));
-                d_ven.setSubtotal(rs.getDouble("subtotal"));
+                //Instanciasmo un nuevo objeto
+                Detalle_venta dventa = new Detalle_venta();
+                dventa.setIddetalle_venta(rs.getInt("iddetalle_venta"));
+                dventa.setIdventa(rs.getInt("idventa"));
+                dventa.setIdarticulo(rs.getInt("idarticulo"));
+                dventa.setCantidad(rs.getInt("cantidad"));
+                dventa.setPrecio_venta(rs.getDouble("precio_venta"));
+                dventa.setDescuento(rs.getDouble("descuento"));
+                dventa.setArticulo(rs.getString("articulo"));
+                dventa.setSubtotal(rs.getDouble("subtotal"));
+                lista.add(dventa);
             }
-        } catch (SQLException e) {
+            rs.close();
+            ps.close();
+            //Recomendable usar un try cath
+        } catch (Exception e) {
             throw e;
         } finally {
             this.desconectar();

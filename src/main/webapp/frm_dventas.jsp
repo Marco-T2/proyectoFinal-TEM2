@@ -133,35 +133,88 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <br>
-                                                    <div class="row">
-                                                        <div class="col-sm-12">
-                                                            <h1>Detalle de ventas</h1>
-                                                            <p>Fecha: ${venta.fecha_hora} Cliente: ${venta.cliente} Usuario: ${venta.usuario} Tipo de comprobante:${venta.tipo_comprobante} </p>
-                                                      
-                                                            <table border="1">
-                                                                <tr>
+                                                    <form action="B1_VentaControlador" method="post">
+                                                        <input type="hidden" name="idventa" value="${venta.idventa}">
+
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <label for="" class="form-label">Cliente</label>
+                                                                        <select name="idcliente" class="form-control">
+                                                                            <option value="">${venta.cliente}</option>
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Fecha</label>
+                                                                        <input type="date" name="fecha_hora" value="${venta.fecha_hora}" class="form-control" placeholder="Ingresa fecha">
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-4">
+                                                                    <div class="form-group">
+                                                                        <label>Tipo Comprobante(*):</label>
+                                                                        <input type="text"  value="${venta.tipo_comprobante}" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Serie</label>
+                                                                        <input type="text" name="serie_comprobante" value="${venta.serie_comprobante}" class="form-control" placeholder="Ingresa serie de comprobante">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <!-- text input -->
+                                                                    <div class="form-group">
+                                                                        <label>Número</label>
+                                                                        <input type="text" name="num_comprobante" value="${venta.num_comprobante}" class="form-control" placeholder="Ingresa número">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                                                                <table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
+                                                                    <thead style="background-color:#A9D0F5">
                                                                     <th>id</th>
                                                                     <th>Articuculo</th>
+                                                                    <th>Cantidad</th>
                                                                     <th>Precio</th>
                                                                     <th>Descuento</th>
                                                                     <th>Sub total</th>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>${d_ventas.idventa}</td>
-                                                                    <td>${d_ventas.articulo}</td>
-                                                                    <td>${d_ventas.precio_venta}</td>
-                                                                    <td>${d_ventas.descuento}</td>
-                                                                    <td>${d_ventas.subtotal}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td colspan="4">Total</td>
-                                                                    
-                                                                    <td>${venta.total_venta}</td>
-                                                                </tr>
-                                                            </table>
+                                                                    </thead>
+                                                                    <c:forEach var="item" items="${d_ventas}">
+                                                                        <tr>
+                                                                            <td>${item.idventa}</td>
+                                                                            <td>${item.articulo}</td>
+                                                                            <td>${item.cantidad}</td>
+                                                                            <td>${item.precio_venta}</td>
+                                                                            <td>${item.descuento}</td>
+                                                                            <td>${item.subtotal}</td>
+                                                                        </tr>                                                              
+                                                                    </c:forEach>
+                                                                    <tfoot>
+                                                                    <th colspan="5">TOTAL</th>
+                                                                    <th>Bs. ${venta.total_venta}</th> 
+                                                                    </tfoot>
+                                                                    <tbody>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        <div class="modal-footer justify-content-between">
+                                                            <a href="B1_VentaControlador?action=view">
+                                                                <button id="btnCancelar" class="btn btn-danger" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+                                                            </a>
+                                                        </div>
+                                                    </form>
+
 
                                                 </div>
                                                 <!-- /.card-body -->

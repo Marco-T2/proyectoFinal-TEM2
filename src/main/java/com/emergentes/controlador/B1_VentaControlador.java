@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,7 @@ public class B1_VentaControlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         try {
             VentaDAO dao = new VentaDAOimpl();
             ClienteDAO daoCliente = new ClienteDAOimpl();
@@ -40,6 +43,11 @@ public class B1_VentaControlador extends HttpServlet {
             int id;
             List<Persona> lista_clientes = null;
             Venta venta = new Venta();
+
+            Detalle_ventaDAO daoDetalleV = new Detalle_ventaDAOimpl();
+            //Detalle_venta d_venta = new Detalle_venta();
+            List<Detalle_venta> lista1 = null;
+
             String action = (request.getParameter("action") != null) ? request.getParameter("action") : "view";
             switch (action) {
                 case "add":
@@ -74,17 +82,14 @@ public class B1_VentaControlador extends HttpServlet {
                     request.getRequestDispatcher("b1_ventas.jsp").forward(request, response);
                     break;
                 case "detalle_venta":
-                    Detalle_ventaDAO daoDetalleV = new Detalle_ventaDAOimpl();
-                    Detalle_venta d_venta = new Detalle_venta();
                     id = Integer.parseInt(request.getParameter("idventa"));
-                    d_venta = daoDetalleV.getById(id);
-                    // Colocar como atributo
-                    request.setAttribute("d_ventas", d_venta);
+                    lista1 = daoDetalleV.getAllId(id);
+                    request.setAttribute("d_ventas", lista1);
                     
                     // Transferir el control a frmventa.jsp
                     venta = dao.getById(id);
                     request.setAttribute("venta", venta);
-                    
+
                     request.getRequestDispatcher("frm_dventas.jsp").forward(request, response);
                     break;
                 default:
@@ -111,13 +116,17 @@ public class B1_VentaControlador extends HttpServlet {
 
         //int iddetalle = Integer.parseInt(request.getParameter("iddetalle_venta"));
         int id_venta = 0;
-        int idarticulo = Integer.parseInt(request.getParameter("idarticulo[]"));
-        int cantidad = Integer.parseInt(request.getParameter("cantidad[]"));
-        double precio_venta = Double.parseDouble(request.getParameter("precio_venta[]"));
-        double descuento = Double.parseDouble(request.getParameter("descuento[]"));
-
-        System.out.println("idarticulo: " + idarticulo + " cantidad: " + cantidad + " precio_venta: " + precio_venta + " descuento: " + descuento);
-        //System.out.println("idarticulo: " + idarticulo + " cantidad: " + cantidad + " precio_venta: " + precio_venta + " descuento: " + descuento);
+        String[] idarticulo = request.getParameterValues("idarticulo[]");
+        String[] cantidad = request.getParameterValues("cantidad[]");
+        String[] precio_venta = request.getParameterValues("precio_venta[]");
+        String[] descuento = request.getParameterValues("descuento[]");
+        //int idarticulo = Integer.parseInt(request.getParameter("idarticulo[]"));
+        // int cantidad = Integer.parseInt(request.getParameter("cantidad[]"));
+        //double precio_venta = Double.parseDouble(request.getParameter("precio_venta[]"));
+        //double descuento = Double.parseDouble(request.getParameter("descuento[]"));
+        /* for (int i = 0; i < idarticulo.length; i++) {
+            System.out.println("idarticulo: " + idarticulo[i] + " cantidad: " + cantidad[i] + " precio_venta: " + precio_venta[i] + " descuento: " + descuento[i]);
+        }*/
 
         Venta venta = new Venta();
         venta.setIdventa(id);
@@ -147,24 +156,33 @@ public class B1_VentaControlador extends HttpServlet {
                 id_venta = dao.insert(venta);
                 //venta.setIdventa(id_venta);
                 System.out.println("id de venta: " + id_venta);
+                // registrando detalle de venta
+                String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
+                String user = "root"; // Esta variable contiene el nombre de usuario
+                String password = ""; // Esta variable contiene la contraseña
+                Connection conn = DriverManager.getConnection(url, user, password);
+                PreparedStatement dv = conn.prepareStatement("INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) values (?,?,?,?,?)");
 
-                de_venta.setIdventa(id_venta);
-                de_venta.setIdarticulo(idarticulo);
-                de_venta.setCantidad(cantidad);
-                de_venta.setPrecio_venta(precio_venta);
-                de_venta.setDescuento(descuento);
-                daoDV.insert(de_venta);
+                for (int i = 0; i < idarticulo.length; i++) {
+                    dv.setInt(1, id_venta);
+                    dv.setInt(2, (Integer.parseInt(idarticulo[i])));
+                    dv.setInt(3, (Integer.parseInt(cantidad[i])));
+                    dv.setInt(4, (Integer.parseInt(precio_venta[i])));
+                    dv.setInt(5, (Integer.parseInt(descuento[i])));
+                    dv.executeUpdate();
+                    /*de_venta.setIdventa(id_venta);
+                    de_venta.setIdarticulo(Integer.parseInt(idarticulo[i]));
+                    de_venta.setCantidad(Integer.parseInt(cantidad[i]));
+                    de_venta.setPrecio_venta(Double.parseDouble(precio_venta[i]));
+                    de_venta.setDescuento(Double.parseDouble(descuento[i]));*/
 
-                /* for (Detalle_venta detalle : detalles) {
-                    System.out.println("Ingresando a for para registrar");
-                    de_venta.setIdventa(id_venta);
-                    de_venta.setIdarticulo(idarticulo);
-                    de_venta.setCantidad(cantidad);
-                    de_venta.setPrecio_venta(precio_venta);
-                    de_venta.setDescuento(descuento);
-                    daoDV.insert(detalle);
-                }*/
+                    System.out.println("contador: " + i);
+                }
+                // daoDV.insert(de_venta);
+
                 response.sendRedirect("B1_VentaControlador");
+                dv.close(); // Cerrar el objeto que contiene la sentencia SQL preparada
+                conn.close();
             } catch (Exception ex) {
                 System.out.println("Error al insertar " + ex.getMessage());
             }
