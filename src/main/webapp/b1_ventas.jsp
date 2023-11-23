@@ -160,8 +160,8 @@
                                                                             <td>${item.tipo_comprobante}</td>
                                                                             <td>${item.num_comprobante}</td>
                                                                             <td>${item.total_venta}</td>
-                                                                            <td><a href="B1_VentaControlador?action=edit&idventa=${item.idventa}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
-                                                                            <a href="B1_VentaControlador?action=delete&idventa=${item.idventa}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
+                                                                            <td><a href="B1_VentaControlador?action=detalle_venta&idventa=${item.idventa}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
+                                                                            <!--<a href="B1_VentaControlador?action=delete&idventa=${item.idventa}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>-->
                                                                         </tr>                                                                   
                                                                     </c:forEach>
                                                                 </tbody>

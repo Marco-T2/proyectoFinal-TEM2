@@ -26,12 +26,11 @@ public class ConexionBD {
             //Mandamos lo parametro sde connexion
             conn = DriverManager.getConnection(url, usuario, password);
         } catch (ClassNotFoundException ex) {
-            System.out.println("Error en el Driver"+ex.getMessage());
+            System.out.println("Error en el Driver" + ex.getMessage());
         } catch (SQLException ex) {
-            System.out.println("Error al realizar la conexion"+ex.getMessage());
+            System.out.println("Error al realizar la conexion" + ex.getMessage());
         }
     }
-
     //Creamos un metodo para devolvernos la conexion
     public Connection conectar() {
         //Retornar el valor de la propiedad conexion
@@ -43,7 +42,7 @@ public class ConexionBD {
         try {
             conn.close();
         } catch (SQLException ex) {
-            System.out.println("Error al cerrar la conexion: "+ex.getMessage());
+            System.out.println("Error al cerrar la conexion: " + ex.getMessage());
         }
     }
 }

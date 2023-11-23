@@ -109,6 +109,7 @@
                                             <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                                 <form action="B1_VentaControlador" method="post">
                                                     <input type="hidden" name="idventa" value="${venta.idventa}">
+                                                    
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="col-sm-12">
