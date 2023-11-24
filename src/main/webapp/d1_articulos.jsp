@@ -131,7 +131,7 @@
                                                                     <button type="button" class="btn btn-default">Nuevo</button>
                                                                 </a>
                                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                                    <a href="reportes/d2_reporteArticulo.jsp">
+                                                                    <a href="reportes/d1_reporteArticulo.jsp">
                                                                         <button type="button" class="btn btn-success">
                                                                             <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
                                                                             <i class="fa fa-arrow-down" aria-hidden="true"></i>

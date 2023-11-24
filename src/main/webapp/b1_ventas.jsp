@@ -131,6 +131,23 @@
                                                                 <a href="B1_VentaControlador?action=add" >
                                                                     <button type="button" class="btn btn-default">Nuevo</button>
                                                                 </a>
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="reportes/b1_reporteVentas.jsp">
+                                                                        <button type="button" class="btn btn-success">
+                                                                            <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+
+                                                                        </button>
+                                                                    </a>
+                                                                </div>  
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="B1_VentaControlador?action=repVentas" target="_blank">
+                                                                        <button type="button" class="btn btn-secondary">
+                                                                            <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,7 +165,7 @@
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">NUMERO</th>
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">TOTAL VENTA</th>
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">ACCIONES</th>
-                                                                      </tr>
+                                                                    </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     <c:forEach var="item" items="${ventas}">
@@ -203,7 +220,7 @@
                 <jsp:include page="WEB-INF/footer.jsp">
                     <jsp:param name="opcion" value="#"/>
                 </jsp:include>       
-                
+
         </div>
         <!-- REQUIRED SCRIPTS -->
 
@@ -225,9 +242,9 @@
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
         <script>
-                                                                                $(document).ready(function () {
-                                                                                    $('#example1').DataTable();
-                                                                                });
+            $(document).ready(function () {
+                $('#example1').DataTable();
+            });
         </script>
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

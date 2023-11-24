@@ -144,7 +144,7 @@
                                                                     </button>
                                                                 </a>
                                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                                    <a href="reportes/b2_reporteProveedores.jsp">
+                                                                    <a href="reportes/c2_reporteProveedores.jsp">
                                                                         <button type="button" class="btn btn-success">
                                                                             <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
                                                                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
