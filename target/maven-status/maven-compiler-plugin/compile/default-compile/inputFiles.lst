@@ -9,6 +9,7 @@ C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\ConexionBD.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\C1_CompraControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\RolControlador.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\IngresoDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Detalle_venta.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\CategoriaDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\D1_ArticuloControlador.java
@@ -18,6 +19,8 @@ C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\C2_ProveedorControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Rol.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ingresoDAOimpl.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Ingreso.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\VentaDAO.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\B2_ClienteControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\E1_ConsultaVentaControlador.java
@@ -25,15 +28,19 @@ C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\H2_PermisoControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ArticuloDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\D2_CategoriaControlador.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\IngresoDAO.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\CategoriaDAO.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ProveedorDAO.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Usuario.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ArticuloDAO.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\IngresoControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ClienteDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\Logout.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\Conversiones.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Detalle_ingreso.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\VentaDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\B1_VentaControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Venta.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Persona.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\H1_UsuarioControlador.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ingresoDAO.java

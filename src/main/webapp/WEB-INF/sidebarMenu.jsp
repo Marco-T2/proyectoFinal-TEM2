@@ -65,7 +65,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="C1_CompraControlador" class="nav-link">
+                        <a href="IngresoControlador" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Compras</p>
                         </a>
