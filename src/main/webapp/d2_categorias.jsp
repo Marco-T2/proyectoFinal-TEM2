@@ -131,6 +131,23 @@
                                                                 <a href="D2_CategoriaControlador?action=add" >
                                                                     <button type="button" class="btn btn-default">Nuevo</button>
                                                                 </a>
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="reportes/d2_reporteCategoria.jsp">
+                                                                        <button type="button" class="btn btn-success">
+                                                                            <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+
+                                                                        </button>
+                                                                    </a>
+                                                                </div>  
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="D2_CategoriaControlador?action=repClientes" target="_blank">
+                                                                        <button type="button" class="btn btn-secondary">
+                                                                            <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

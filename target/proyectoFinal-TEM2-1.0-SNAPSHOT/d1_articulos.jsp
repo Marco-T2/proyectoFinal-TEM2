@@ -130,6 +130,23 @@
                                                                 <a href="D1_ArticuloControlador?action=add" >
                                                                     <button type="button" class="btn btn-default">Nuevo</button>
                                                                 </a>
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="reportes/d2_reporteArticulo.jsp">
+                                                                        <button type="button" class="btn btn-success">
+                                                                            <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+
+                                                                        </button>
+                                                                    </a>
+                                                                </div>  
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="D1_ArticuloControlador?action=repClientes" target="_blank">
+                                                                        <button type="button" class="btn btn-secondary">
+                                                                            <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -147,7 +164,7 @@
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">CATEGORIA</th>
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">CONDICION</th>
                                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">ACCIONES</th>
-                                                                       <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>-->
+                                                                        <!-- <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"></th>-->
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -161,7 +178,7 @@
                                                                             <td>${item.categoria}</td>
                                                                             <td>${item.condicion}</td>
                                                                             <td><a href="D1_ArticuloControlador?action=edit&idarticulo=${item.idarticulo}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
-                                                                            <a href="D1_ArticuloControlador?action=delete&idarticulo=${item.idarticulo}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
+                                                                                <a href="D1_ArticuloControlador?action=delete&idarticulo=${item.idarticulo}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>
                                                                         </tr>                                                                   
                                                                     </c:forEach>
                                                                 </tbody>
@@ -214,9 +231,9 @@
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap4.min.js"></script>
         <script>
-                                                                                $(document).ready(function () {
-                                                                                    $('#example1').DataTable();
-                                                                                });
+                                                                                    $(document).ready(function () {
+                                                                                        $('#example1').DataTable();
+                                                                                    });
         </script>
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
