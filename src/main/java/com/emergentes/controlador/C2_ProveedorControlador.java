@@ -177,7 +177,7 @@ public class C2_ProveedorControlador extends HttpServlet {
                     + "<div class=\"row\">\n"
                     + // Fila para el reporte de ventas
                     "<div class=\"col-md-12 center-text\">\n" // Agrega la clase center-text
-                    + "<h2>Reporte clientes</h2>\n"
+                    + "<h2>Reporte proveedores</h2>\n"
                     + "<table class=\"table table-bordered table-striped\">\n"
                     + "<thead class=\"thead-dark\">\n"
                     + "<tr>\n"

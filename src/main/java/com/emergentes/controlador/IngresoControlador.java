@@ -98,7 +98,7 @@ public class IngresoControlador extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("idingreso"));
         int idproveedor = Integer.parseInt(request.getParameter("idproveedor"));
         //int idusuario = Integer.parseInt(request.getParameter("idusuario"));
-        int idusuario = 10; //aqui debe remplazar el usuario que tiene en su base de datos
+        int idusuario = 1; //aqui debe remplazar el usuario que tiene en su base de datos
         String tipo_comprobante = request.getParameter("tipo_comprobante");
         String serie_comprobante = request.getParameter("serie_comprobante");
         String num_comprobante = request.getParameter("num_comprobante");
@@ -135,7 +135,7 @@ public class IngresoControlador extends HttpServlet {
                 // conexion para registar el detalle
                 String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
                 String user = "root"; // Esta variable contiene el nombre de usuario
-                String password = ""; // Esta variable contiene la contraseña
+                String password = "1234567"; // Esta variable contiene la contraseña
                 Connection conn = DriverManager.getConnection(url, user, password);
                 PreparedStatement di = conn.prepareStatement("INSERT INTO detalle_ingreso (idingreso,idarticulo,cantidad,precio_compra,precio_venta) values (?,?,?,?,?)");
 
