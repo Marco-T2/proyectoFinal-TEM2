@@ -157,7 +157,7 @@
                                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                                     <a href="B2_ClienteControlador?action=repClientes" target="_blank">
                                                                         <button type="button" class="btn btn-secondary">
-                                                                            <i class="fa fa-file-o" aria-hidden="true"></i> Descargar PDF
+                                                                            <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
                                                                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
                                                                         </button>
                                                                     </a>

@@ -143,6 +143,23 @@
                                                                         Nuevo
                                                                     </button>
                                                                 </a>
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="reportes/b2_reporteProveedores.jsp">
+                                                                        <button type="button" class="btn btn-success">
+                                                                            <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+
+                                                                        </button>
+                                                                    </a>
+                                                                </div>  
+                                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                                    <a href="C2_ProveedorControlador?action=repProveedores" target="_blank">
+                                                                        <button type="button" class="btn btn-secondary">
+                                                                            <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
+                                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
