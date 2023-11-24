@@ -13,7 +13,7 @@ public class ConexionBD {
     //Establece el Usuario
     static public String usuario = "root";
     //Establece la contraseña
-    static public String password = "";
+    static public String password = "1234567";
 
     //Variable de alcance protected (Permite gestionar la conexion)
     protected Connection conn = null; //Necesita libreria
