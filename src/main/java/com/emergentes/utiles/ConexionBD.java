@@ -9,11 +9,11 @@ public class ConexionBD {
     //Establecemos el driver para conectarnos a la base de datos
     static public String driver = "com.mysql.cj.jdbc.Driver";
     //Establecer la direccion de conexion
-    static public String url = "jdbc:mysql://localhost:3306/db_sistema";
+    static public String url = "jdbc:mysql://localhost:3306/db_sistemas";
     //Establece el Usuario
     static public String usuario = "root";
     //Establece la contraseña
-    static public String password = "1234567";
+    static public String password = "";
 
     //Variable de alcance protected (Permite gestionar la conexion)
     protected Connection conn = null; //Necesita libreria
