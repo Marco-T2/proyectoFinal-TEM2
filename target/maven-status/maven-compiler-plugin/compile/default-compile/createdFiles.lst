@@ -1,4 +1,3 @@
-com\emergentes\controlador\C1_CompraControlador.class
 com\emergentes\dao\CategoriaDAO.class
 com\emergentes\dao\IngresoDAOimpl.class
 com\emergentes\dao\ClienteDAO.class
