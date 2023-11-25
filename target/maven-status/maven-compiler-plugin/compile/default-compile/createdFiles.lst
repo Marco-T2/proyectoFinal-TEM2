@@ -35,6 +35,7 @@ com\emergentes\dao\ClienteDAOimpl.class
 com\emergentes\utiles\ConexionBD.class
 com\emergentes\modelo\Articulo.class
 com\emergentes\controlador\B1_VentaControlador.class
+com\emergentes\controlador\AyudaControlador.class
 com\emergentes\dao\ArticuloDAOimpl.class
 com\emergentes\modelo\Detalle_venta.class
 com\emergentes\controlador\D2_CategoriaControlador.class

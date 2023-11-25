@@ -126,7 +126,7 @@
             </li>
             <li class="nav-header">OTRAS OPCIONES</li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="AyudaControlador" class="nav-link">
                     <i class="nav-icon fas fa-calendar-alt"></i>
                     <p>
                         Ayuda
