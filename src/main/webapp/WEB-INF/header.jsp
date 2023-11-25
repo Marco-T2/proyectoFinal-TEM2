@@ -1,11 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>AdminLTE 3 | Dashboard 3</title>
-         <!-- Google Font: Source Sans Pro -->
+        <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome Icons -->
         <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -17,7 +16,6 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
 
     </head>
-    <!--body--->
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
             <!-- Navbar -->
@@ -28,7 +26,7 @@
                         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="a0_index.jsp" class="nav-link">Inicio</a>
+                        <a href="index3.html" class="nav-link">Inicio</a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
                         <a href="#" class="nav-link">Contacto</a>
@@ -59,6 +57,7 @@
                         </div>
                     </li>
 
+
                     <li class="nav-item">
                         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                             <i class="fas fa-expand-arrows-alt"></i>
@@ -71,7 +70,7 @@
                     </li>
                 </ul>
             </nav>
-            <!-- /.navbar -->   
+            <!-- /.navbar -->
 
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -80,6 +79,3 @@
                     <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                     <span class="brand-text font-weight-light">TEM 2</span>
                 </a>
-
-
-
