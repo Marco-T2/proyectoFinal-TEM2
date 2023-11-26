@@ -55,25 +55,23 @@
                                                         Nuevo
                                                     </button>
                                                 </a>
-                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                    <a href="reportes/b2_reporteClientes.jsp">
-                                                        <button type="button" class="btn btn-success">
-                                                            <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
-                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                &nbsp;
+                                                
+                                                <a href="reportes/b2_reporteClientes.jsp">
+                                                    <button type="button" class="btn btn-success">
+                                                        <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
+                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                    </button>
+                                                </a>
+                                                &nbsp;
 
-                                                        </button>
-                                                    </a>
-                                                </div>  
-                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                                    <a href="B2_ClienteControlador?action=repClientes" target="_blank">
-                                                        <button type="button" class="btn btn-warning">
-                                                            <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
-                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                                                        </button>
-                                                    </a>
-                                                </div>
+                                                <a href="B2_ClienteControlador?action=repClientes" target="_blank">
+                                                    <button type="button" class="btn btn-warning">
+                                                        <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
+                                                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                    </button>
+                                                </a>
                                             </div>
-
                                         </div>
                                     </div>
                                     <br>

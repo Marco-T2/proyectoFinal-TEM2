@@ -27,6 +27,7 @@ com\emergentes\controlador\C2_ProveedorControlador.class
 com\emergentes\dao\IngresoDAO.class
 com\emergentes\dao\ProveedorDAOimpl.class
 com\emergentes\dao\CategoriaDAOimpl.class
+com\emergentes\controlador\AcercaControlador.class
 com\emergentes\controlador\H2_PermisoControlador.class
 com\emergentes\dao\ArticuloDAO.class
 com\emergentes\dao\RolDAOimpl.class
