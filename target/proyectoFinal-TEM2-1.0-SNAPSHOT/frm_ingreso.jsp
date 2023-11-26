@@ -14,128 +14,128 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Main content -->
-    <br
-        <div class="content">
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <!-- /ESTO SE TIENE QUE MODIFICAR -->
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Realizar nueva compra</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body"> 
-                            <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                <form action="IngresoControlador" method="post">
-                                    <input type="hidden" name="idingreso" value="${ingreso.idingreso}">
+    <br>
+    <div class="content">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- /ESTO SE TIENE QUE MODIFICAR -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Realizar nueva compra</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body"> 
+                                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                    <form action="IngresoControlador" method="post">
+                                        <input type="hidden" name="idingreso" value="${ingreso.idingreso}">
 
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="" class="form-label">Proveedor</label>
-                                                    <select name="idproveedor" class="form-control">
-                                                        <option value="">--Seleccione--</option>
-                                                        <c:forEach var="item" items="${lista_proveedores}">
-                                                            <option value="${item.idpersona}" 
-                                                                    <c:if test="${venta.idproveedor== item.idpersona}">
-                                                                        selected
-                                                                    </c:if>
-                                                                    >${item.nombre}</option>                            
-                                                        </c:forEach>
-                                                    </select>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Proveedor</label>
+                                                        <select name="idproveedor" class="form-control">
+                                                            <option value="">--Seleccione--</option>
+                                                            <c:forEach var="item" items="${lista_proveedores}">
+                                                                <option value="${item.idpersona}" 
+                                                                        <c:if test="${venta.idproveedor== item.idpersona}">
+                                                                            selected
+                                                                        </c:if>
+                                                                        >${item.nombre}</option>                            
+                                                            </c:forEach>
+                                                        </select>
+                                                    </div>
                                                 </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <!-- text input -->
+                                                    <div class="form-group">
+                                                        <label>Fecha</label>
+                                                        <input type="date" name="fecha_hora" value="${ingreso.fecha_hora}" class="form-control" placeholder="Ingresa fecha">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Tipo Comprobante(*):</label>
+                                                        <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required="">
+                                                            <option value="Boleta">Boleta</option>
+                                                            <option value="Factura">Factura</option>
+                                                            <option value="Ticket">Ticket</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <!-- text input -->
+                                                    <div class="form-group">
+                                                        <label>Serie</label>
+                                                        <input type="text" name="serie_comprobante" value="${ingreso.serie_comprobante}" class="form-control" placeholder="Ingresa serie de comprobante">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <!-- text input -->
+                                                    <div class="form-group">
+                                                        <label>Número</label>
+                                                        <input type="text" name="num_comprobante" value="${ingreso.num_comprobante}" class="form-control" placeholder="Ingresa número">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                <a data-toggle="modal" href="#myModal">           
+                                                    <button id="btnAgregarArt" type="button" class="btn btn-primary"> <span class="fa fa-plus"></span> Agregar Artículos</button>
+                                                </a>
                                             </div>
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Fecha</label>
-                                                    <input type="date" name="fecha_hora" value="${ingreso.fecha_hora}" class="form-control" placeholder="Ingresa fecha">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Tipo Comprobante(*):</label>
-                                                    <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required="">
-                                                        <option value="Boleta">Boleta</option>
-                                                        <option value="Factura">Factura</option>
-                                                        <option value="Ticket">Ticket</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Serie</label>
-                                                    <input type="text" name="serie_comprobante" value="${ingreso.serie_comprobante}" class="form-control" placeholder="Ingresa serie de comprobante">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Número</label>
-                                                    <input type="text" name="num_comprobante" value="${ingreso.num_comprobante}" class="form-control" placeholder="Ingresa número">
-                                                </div>
+                                            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                                                <table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
+                                                    <thead style="background-color:#A9D0F5">
+                                                    <th>Opciones</th>
+                                                    <th>Artículo</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Precio compra</th>
+                                                    <th>Precio venta</th>
+                                                    <th>Subtotal</th>
+                                                    </thead>
+                                                    <tfoot>
+                                                    <th>TOTAL</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th><h4 id="total">Bs/. 0.00</h4><input type="hidden" name="total_compra" id="total_compra"></th> 
+                                                    </tfoot>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
-                                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                            <a data-toggle="modal" href="#myModal">           
-                                                <button id="btnAgregarArt" type="button" class="btn btn-primary"> <span class="fa fa-plus"></span> Agregar Artículos</button>
+                                        <div class="modal-footer justify-content-between">
+                                            <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
+                                            <a href="IngresoControlador?action=view">
+                                                <button id="btnCancelar" class="btn btn-danger" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
                                             </a>
                                         </div>
-
-                                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                                            <table id="detalles" class="table table-striped table-bordered table-condensed table-hover">
-                                                <thead style="background-color:#A9D0F5">
-                                                <th>Opciones</th>
-                                                <th>Artículo</th>
-                                                <th>Cantidad</th>
-                                                <th>Precio compra</th>
-                                                <th>Precio venta</th>
-                                                <th>Subtotal</th>
-                                                </thead>
-                                                <tfoot>
-                                                <th>TOTAL</th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th><h4 id="total">Bs/. 0.00</h4><input type="hidden" name="total_compra" id="total_compra"></th> 
-                                                </tfoot>
-                                                <tbody>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer justify-content-between">
-                                        <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>
-                                        <a href="IngresoControlador?action=view">
-                                            <button id="btnCancelar" class="btn btn-danger" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
-                                        </a>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
+                                <!-- /.card-body -->
                             </div>
-                            <!-- /.card-body -->
+                            <!-- /ESTO SE TIENE QUE MODIFICAR -->
+                            <!-- /.card -->
                         </div>
-                        <!-- /ESTO SE TIENE QUE MODIFICAR -->
-                        <!-- /.card -->
+                        <!-- /.col -->
                     </div>
-                    <!-- /.col -->
+                    <!-- /.row -->
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-    </section>
-</div>
-<!-- /.Main content -->
+                <!-- /.container-fluid -->
+        </section>
+    </div>
+    <!-- /.Main content -->
 </div>
 <!-- /.content-wrapper -->       
 <!-- MODAL inicio -->

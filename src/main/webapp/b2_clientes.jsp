@@ -51,7 +51,7 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="B2_ClienteControlador?action=add">
-                                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">
                                                         Nuevo
                                                     </button>
                                                 </a>
@@ -66,7 +66,7 @@
                                                 </div>  
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="B2_ClienteControlador?action=repClientes" target="_blank">
-                                                        <button type="button" class="btn btn-secondary">
+                                                        <button type="button" class="btn btn-warning">
                                                             <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
                                                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
                                                         </button>
@@ -129,88 +129,4 @@
 </div>
 <!-- /.content-wrapper -->
 
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->
-
-<!-- Main Footer -->
-<footer class="main-footer">
-    <strong>Copyright &copy; 2023 <a href="https://adminlte.io">TEM - 2</a>.</strong>
-    Todos los derechos reservados.
-    <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 0.1.0
-    </div>
-</footer>
-</div>
-
-
-<!-- MODAL -->
-<div class="modal fade" id="modal-lg">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Informacion cliente</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="#" method="post">
-                <input type="hidden" name="id" value="${cliente.idpersona}">
-                <div class="modal-body">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Tipo persona</label>
-                            <input type="text" value="${cliente.tipo_persona}" class="form-control" placeholder="Enter ...">
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Nombre</label>
-                                    <input type="text" value="${cliente.nombre}" class="form-control" placeholder="Enter ...">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Carnet de Identidad</label>
-                                    <input type="text" value="${cliente.ci_documento}" class="form-control" placeholder="Enter ...">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Direccion</label>
-                                    <input type="text" value="${cliente.direccion}" class="form-control" placeholder="Enter ...">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <!-- text input -->
-                                <div class="form-group">
-                                    <label>Telefono</label>
-                                    <input type="text" value="${cliente.telefono}" class="form-control" placeholder="Enter ...">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- text input -->
-                        <div class="form-group">
-                            <label>Correo</label>
-                            <input type="text" value="${cliente.email}" class="form-control" placeholder="Enter ...">
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                    </div>
-                </div>
-            </form>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
-    <jsp:include page="WEB-INF/footer.jsp"/>
+<jsp:include page="WEB-INF/footer.jsp"/>
