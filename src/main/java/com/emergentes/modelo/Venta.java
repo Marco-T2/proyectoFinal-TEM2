@@ -14,6 +14,7 @@ public class Venta {
     private String estado;
     private String cliente;
     private String usuario;
+    private double total_venta_mes;
 
     public Venta() {
     }
@@ -104,6 +105,14 @@ public class Venta {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    public double getTotal_venta_mes() {
+        return total_venta_mes;
+    }
+
+    public void setTotal_venta_mes(double total_venta_mes) {
+        this.total_venta_mes = total_venta_mes;
     }
     
 }

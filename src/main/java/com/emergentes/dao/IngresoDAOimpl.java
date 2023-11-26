@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class IngresoDAOimpl extends ConexionBD implements IngresoDAO {
 
@@ -124,6 +125,50 @@ public class IngresoDAOimpl extends ConexionBD implements IngresoDAO {
             this.desconectar();
         }
         return lista;
+    }
+
+    @Override
+    public Vector<Double> getCompraMes() throws Exception {
+       Vector<Double> ventasMes = new Vector<>();
+        try {
+            this.conectar();
+            String sql = "SELECT MONTH(fecha_hora) AS mes, sum(total_compra) AS total_compras FROM ingreso GROUP BY MONTH(fecha_hora)";
+            PreparedStatement ps = this.conn.prepareStatement(sql);  
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                double compra_tm = rs.getDouble("total_compras");
+                ventasMes.add(compra_tm);
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return ventasMes;
+    }
+
+    @Override
+    public Vector<String> getMesC() throws Exception {
+       Vector<String> meses = new Vector<>();
+        try {
+            this.conectar();
+            String sql = "SELECT DATE_FORMAT(fecha_hora, '%M') AS meses FROM ingreso  GROUP BY MONTH(fecha_hora)";
+            PreparedStatement ps = this.conn.prepareStatement(sql);  
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String mes = rs.getString("meses");
+                meses.add(mes);
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return meses;
     }
 
 }
