@@ -35,8 +35,8 @@ public class srvUsuario extends HttpServlet {
 
         } catch (Exception e) {
             try {
-                 System.out.println("Error 1" + e.getMessage());
-               // this.getServletConfig().getServletContext().getRequestDispatcher("/mensaje.jsp").forward(request, response);
+                System.out.println("Error 1" + e.getMessage());
+                this.getServletConfig().getServletContext().getRequestDispatcher("/mensaje.jsp").forward(request, response);
             } catch (Exception ex) {
                 System.out.println("Error" + ex.getMessage());
             }
@@ -83,14 +83,14 @@ public class srvUsuario extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void cerrarsesion(HttpServletRequest request, HttpServletResponse response)throws Exception  {
-       HttpSession session=request.getSession();
-       session.setAttribute("usuario", null);
-       session.invalidate();
-       response.sendRedirect("login.jsp");
+    private void cerrarsesion(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        HttpSession session = request.getSession();
+        session.setAttribute("usuario", null);
+        session.invalidate();
+        response.sendRedirect("login.jsp");
     }
 
-    private void verificar(HttpServletRequest request, HttpServletResponse response)throws Exception {
+    private void verificar(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession sesion;
         usuarioLogin dao;
         Usuario usuario;
@@ -101,22 +101,21 @@ public class srvUsuario extends HttpServlet {
             sesion = request.getSession();
             sesion.setAttribute("usuario", usuario);
             request.setAttribute("msje", "Bienvenido al sistema");
-             System.out.println("usuario es y contraseña correcto");
+            System.out.println("usuario es y contraseña correcto");
             //this.getServletConfig().getServletContext().getRequestDispatcher("A0_IndexControlador").forward(request, response);
             response.sendRedirect("A0_IndexControlador");
-        }
-        else if (usuario != null && usuario.getRolC().getNombre().equals("Vendedor")) {
+        } else if (usuario != null && usuario.getRolC().getNombre().equals("Vendedor")) {
             sesion = request.getSession();
             sesion.setAttribute("usuario", usuario);
             //request.setAttribute("msje", "Bienvenido al sistema");
             response.sendRedirect("A0_IndexControlador");
             this.getServletConfig().getServletContext().getRequestDispatcher("indexVendedor.jsp").forward(request, response);
-        }else{
+        } else {
             System.out.println("usuario es y contraseña es incorrecta del vender");
-            request.setAttribute("msje","Credenciales Incorrectas");
+            request.setAttribute("msje", "Credenciales Incorrectas");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-        
+
     }
 
     private Usuario obtenerUsuario(HttpServletRequest request) {
