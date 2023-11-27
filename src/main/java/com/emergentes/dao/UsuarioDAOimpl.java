@@ -35,7 +35,7 @@ public class UsuarioDAOimpl extends ConexionBD implements UsuarioDAO {
     public void update(Usuario usuario) throws Exception {
         try {
             this.conectar();
-            PreparedStatement ps = this.conn.prepareStatement("UPDATE usuario SET nombre=?, ci_documento=?, email=?,cargo=?,login=?,clave=?,condicion=?,idrol=? WHERE idusuario=?");
+            PreparedStatement ps = this.conn.prepareStatement("UPDATE usuario SET nombre=?, ci_documento=?, email=?,cargo=?,login=?,clave=md5(?),condicion=?,idrol=? WHERE idusuario=?");
 
             ps.setString(1, usuario.getNombre());
             ps.setString(2, usuario.getCi_documento());

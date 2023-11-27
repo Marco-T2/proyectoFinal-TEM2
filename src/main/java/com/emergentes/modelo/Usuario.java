@@ -12,6 +12,7 @@ public class Usuario {
     private int condicion;
     private int idrol;
     private String rol_nombre;
+    private Rol rolC;
     public Usuario() {
         this.idusuario=0;
         this.nombre="";
@@ -103,6 +104,14 @@ public class Usuario {
 
     public void setRol_nombre(String rol_nombre) {
         this.rol_nombre = rol_nombre;
+    }
+
+    public Rol getRolC() {
+        return rolC;
+    }
+
+    public void setRolC(Rol rolC) {
+        this.rolC = rolC;
     }
     
 }

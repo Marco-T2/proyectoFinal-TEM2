@@ -36,6 +36,7 @@
 
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
+
                     <!-- Navbar Search -->
                     <li class="nav-item">
                         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
@@ -52,13 +53,14 @@
                                         <button class="btn btn-navbar" type="button" data-widget="navbar-search">
                                             <i class="fas fa-times"></i>
                                         </button>
+
                                     </div>
+
                                 </div>
                             </form>
+
                         </div>
                     </li>
-
-
                     <li class="nav-item">
                         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                             <i class="fas fa-expand-arrows-alt"></i>
@@ -67,6 +69,11 @@
                     <li class="nav-item">
                         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                             <i class="fas fa-th-large"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="srvUsuario?accion=cerrar" role="button">
+                            <i class="btn-danger">Cerrar Session</i>
                         </a>
                     </li>
                 </ul>

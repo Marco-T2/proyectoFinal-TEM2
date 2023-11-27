@@ -1,11 +1,12 @@
-<%
-    if (session.getAttribute("login") != "OK") {
-        response.sendRedirect("login.jsp");
-    }
-%>
+
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    if(session.getAttribute("usuario")!=null){
+    
+%>
 <jsp:include page="WEB-INF/header.jsp"/>
 
 <jsp:include page="WEB-INF/sidebarMenu.jsp">
@@ -272,6 +273,7 @@
 <!-- /.content-wrapper -->
 <!-- Main Footer -->
 <jsp:include page="WEB-INF/footer.jsp"/>
+
 <script type="text/javascript">
     var ctx = document.getElementById("ventas").getContext('2d');
     var compras = new Chart(ctx, {
@@ -322,8 +324,6 @@
             }
             }
     });
-    
-    
     var ctx = document.getElementById("compras").getContext('2d');
     var ventas = new Chart(ctx, {
     type: 'bar',
@@ -375,4 +375,9 @@
     });
 </script>
 
-
+<%
+    }  
+else{
+response.sendRedirect("login.jsp");
+}
+%>

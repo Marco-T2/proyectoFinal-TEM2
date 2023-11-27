@@ -27,7 +27,8 @@ public class Login extends HttpServlet {
         //Recuperamos los parametros enviados desde el LOGIN>JSP
         String login=request.getParameter("login");
         String clave = request.getParameter("clave");
-        String nombre="";
+      
+        String usuario="";
         String rol;
                 
         //Verificar lode datos de inicio
@@ -36,7 +37,9 @@ public class Login extends HttpServlet {
             //System.out.println("Todo ok");
             HttpSession ses = request.getSession();
             ses.setAttribute("login", "OK");
-            ses.setAttribute("nombre",login);
+            ses.setAttribute("usuario",login);
+            
+             
             //ses.setAttribute("login", usuario);
             response.sendRedirect("A0_IndexControlador");
         }

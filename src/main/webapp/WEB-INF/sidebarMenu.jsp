@@ -11,9 +11,10 @@
             <img src="https://www.show.news/__export/1567201752167/sites/debate/img/2019/08/30/gato_png_crop1567201738546.jpg_839202635.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">${nombre}</a>
+            <a href="#" class="d-block">${usuario.nombre}-${usuario.rolC.nombre}</a>
         </div>
     </div>
+        
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -194,9 +195,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="srvUsuario?accion=cerrar" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Otros - 2</p>
+                            <p>Cerrar Session</p>
                         </a>
                     </li>
                 </ul>

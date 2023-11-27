@@ -117,7 +117,7 @@ public class B1_VentaControlador extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("idventa"));
         int idcliente = Integer.parseInt(request.getParameter("idcliente"));
         //int idusuario = Integer.parseInt(request.getParameter("idusuario"));
-        int idusuario = 10; //aqui debe remplazar el usuario que tiene en su base de datos
+        int idusuario = Integer.parseInt(request.getParameter("idusuario"));
         String tipo_comprobante = request.getParameter("tipo_comprobante");
         String serie_comprobante = request.getParameter("serie_comprobante");
         String num_comprobante = request.getParameter("num_comprobante");

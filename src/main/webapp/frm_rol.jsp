@@ -1,7 +1,6 @@
 <%
-    if (session.getAttribute("login") != "OK") {
-        response.sendRedirect("login.jsp");
-    }
+    if (session.getAttribute("usuario") != null) {
+       
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -59,8 +58,17 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
-                                                        <label>Nombre de rol</label>
-                                                        <input type="text" name="nombre" value="${rol.nombre}" class="form-control" placeholder="Ingresa el nombre de rol">
+                                                       <!-- <label>Nombre de rol</label>
+                                                        <input type="text" name="nombre" value="${rol.nombre}" class="form-control" placeholder="Ingresa el nombre de rol">-->
+                                                    
+                                                    <label for="" class="form-label">Nombre de rol</label>
+                                                        <select name="nombre" class="form-control">
+                                                            <option value="">--Seleccione--</option>
+                                                            <option value="Administrador">Administrador</option>  
+                                                            <option value="Vendedor">Vendedor</option>
+                                                            <option value="Empleado">Empleado</option>
+                                                            <option value="Técnico">Técnico</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -94,3 +102,7 @@
 <!-- /.content-wrapper -->
 
 <jsp:include page="WEB-INF/footer.jsp"/> 
+<%}else{
+response.sendRedirect("login.jsp");
+    }
+%>

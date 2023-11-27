@@ -18,13 +18,19 @@ public class Validate extends ConexionBD {
         boolean resultado = false;
         try {
 
-            String sql = "select * from usuario where login=? and clave = md5(?)";
+            String sql = "select idusuario,nombre,login,clave from usuario where login=? and clave = md5(?)";
             
             pr = con.prepareStatement(sql);
             pr.setString(1, login);
             pr.setString(2, password);
             ResultSet rs = pr.executeQuery();
             resultado = rs.next();
+            /*if (rs.next()) {
+                int idusuario = rs.getInt("idusuario");
+                resultado=idusuario;
+                rol.setNombre(rs.getString("nombre"));
+                rol.setDescripcion(rs.getString("descripcion"));
+            }*/
 
         } catch (SQLException ex) {
             System.out.println("Error al autentificar "+ex.getMessage());

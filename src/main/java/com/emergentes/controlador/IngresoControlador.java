@@ -98,7 +98,7 @@ public class IngresoControlador extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("idingreso"));
         int idproveedor = Integer.parseInt(request.getParameter("idproveedor"));
         //int idusuario = Integer.parseInt(request.getParameter("idusuario"));
-        int idusuario = 1; //aqui debe remplazar el usuario que tiene en su base de datos
+        int idusuario = Integer.parseInt(request.getParameter("idusuario"));
         String tipo_comprobante = request.getParameter("tipo_comprobante");
         String serie_comprobante = request.getParameter("serie_comprobante");
         String num_comprobante = request.getParameter("num_comprobante");

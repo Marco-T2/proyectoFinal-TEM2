@@ -1,7 +1,6 @@
 <%
-    if (session.getAttribute("login") != "OK") {
-        response.sendRedirect("login.jsp");
-    }
+    if(session.getAttribute("usuario")!=null){
+    
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -123,3 +122,7 @@
 </div>
 
 <jsp:include page="WEB-INF/footer.jsp"/>
+<%}else{
+response.sendRedirect("login.jsp");
+    }
+%>

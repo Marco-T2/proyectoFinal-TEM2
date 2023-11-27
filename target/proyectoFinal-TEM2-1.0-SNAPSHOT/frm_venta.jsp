@@ -1,7 +1,6 @@
 <%
-    if (session.getAttribute("login") != "OK") {
-        response.sendRedirect("login.jsp");
-    }
+    if (session.getAttribute("usuario") != null) {
+       
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -113,6 +112,7 @@
                                                     <div class="card-body">
                                                         <div class="row">
                                                             <div class="col-sm-12">
+                                                                <input type="text"name="idusuario" value="${usuario.idusuario}">
                                                                 <div class="form-group">
                                                                     <label for="" class="form-label">Cliente</label>
                                                                     <select name="idcliente" class="form-control">
@@ -385,5 +385,9 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+<%}else{
+response.sendRedirect("login.jsp");
+    }
+%>
 
 
