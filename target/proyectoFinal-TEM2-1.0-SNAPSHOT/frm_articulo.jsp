@@ -47,9 +47,6 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="D1_ArticuloControlador?action=view">
-                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-lg">
-                                                        Regresar
-                                                    </button>
                                                 </a>
                                             </div>                                                            
                                         </div>    
