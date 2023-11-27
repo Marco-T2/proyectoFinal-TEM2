@@ -109,10 +109,22 @@ public class srvUsuario extends HttpServlet {
             sesion.setAttribute("usuario", usuario);
             //request.setAttribute("msje", "Bienvenido al sistema");
             response.sendRedirect("A0_IndexControlador");
-            this.getServletConfig().getServletContext().getRequestDispatcher("indexVendedor.jsp").forward(request, response);
+            //this.getServletConfig().getServletContext().getRequestDispatcher("indexVendedor.jsp").forward(request, response);
+        } else if (usuario != null && usuario.getRolC().getNombre().equals("Empleado")) {
+            sesion = request.getSession();
+            sesion.setAttribute("usuario", usuario);
+            //request.setAttribute("msje", "Bienvenido al sistema");
+            response.sendRedirect("A0_IndexControlador");
+            //this.getServletConfig().getServletContext().getRequestDispatcher("indexVendedor.jsp").forward(request, response);
+        } else if (usuario != null && usuario.getRolC().getNombre().equals("Técnico")) {
+            sesion = request.getSession();
+            sesion.setAttribute("usuario", usuario);
+            //request.setAttribute("msje", "Bienvenido al sistema");
+            response.sendRedirect("A0_IndexControlador");
+            //this.getServletConfig().getServletContext().getRequestDispatcher("indexVendedor.jsp").forward(request, response);
         } else {
-            System.out.println("usuario es y contraseña es incorrecta del vender");
-            request.setAttribute("msje", "Credenciales Incorrectas");
+            //System.out.println("usuario es y contraseña es incorrecta");
+            request.setAttribute("msje", "Usuario y contraseña es  incorrecta");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
 
