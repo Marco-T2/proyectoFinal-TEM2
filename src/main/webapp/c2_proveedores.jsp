@@ -1,6 +1,6 @@
 <%
-    if(session.getAttribute("usuario")!=null){
-   
+    if (session.getAttribute("usuario") != null) {
+
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -51,18 +51,19 @@
                                                         <ion-icon name="add"></ion-icon>Nuevo
                                                     </button>
                                                 </a>
+                                                &nbsp
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="reportes/c2_reporteProveedores.jsp">
                                                         <button type="button" class="btn btn-success">
                                                             <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
                                                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
-
                                                         </button>
                                                     </a>
-                                                </div>  
+                                                </div>
+                                                &nbsp
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="C2_ProveedorControlador?action=repProveedores" target="_blank">
-                                                        <button type="button" class="btn btn-secondary">
+                                                        <button type="button" class="btn btn-warning">
                                                             <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
                                                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
                                                         </button>
@@ -125,7 +126,7 @@
 <!-- /.content-wrapper -->
 
 <jsp:include page="WEB-INF/footer.jsp"/>
-<%}else{
-response.sendRedirect("login.jsp");
+<%} else {
+        response.sendRedirect("login.jsp");
     }
 %>
