@@ -48,7 +48,7 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="B1_VentaControlador?action=add" >
-                                                    <button type="button" class="btn btn-primary">Nuevo</button>
+                                                    <button type="button" class="btn btn-primary"><ion-icon name="add"></ion-icon>Nuevo</button>
                                                 </a>&nbsp
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="reportes/b1_reporteVentas.jsp">

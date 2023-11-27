@@ -1,6 +1,6 @@
 <%
     if (session.getAttribute("usuario") != null) {
-       
+
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -48,8 +48,25 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="IngresoControlador?action=add" >
-                                                    <button type="button" class="btn btn-success"><ion-icon name="add"></ion-icon>Nuevo</button>
+                                                    <button type="button" class="btn btn-primary"><ion-icon name="add"></ion-icon>Nuevo</button>
                                                 </a>
+                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <a href="reportes/v_reporteIngresos.jsp">
+                                                        <button type="button" class="btn btn-success">
+                                                            <i class="fa fa-table" aria-hidden="true"></i> Descargar xml
+                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+
+                                                        </button>
+                                                    </a>
+                                                </div> &nbsp 
+                                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                    <a href="IngresoControlador?action=repCompra" target="_blank">
+                                                        <button type="button" class="btn btn-warning">
+                                                            <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
+                                                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                        </button>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +122,7 @@
 </div>
 <!-- /.content-wrapper -->
 <jsp:include page="WEB-INF/footer.jsp"/> 
-<%}else{
-response.sendRedirect("login.jsp");
+<%} else {
+        response.sendRedirect("login.jsp");
     }
 %>
