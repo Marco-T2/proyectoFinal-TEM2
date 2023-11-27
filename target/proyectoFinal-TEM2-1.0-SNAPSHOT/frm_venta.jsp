@@ -178,7 +178,8 @@
                                                                 <th>Cantidad</th>
                                                                 <th>Precio Venta</th>
                                                                 <th>Descuento</th>
-                                                                <th>Subtotal</th>
+                                                                <th>Sub Total </th>
+                                                                <th></th>
                                                                 </thead>
                                                                 <tfoot>
                                                                 <th>TOTAL</th>
@@ -186,7 +187,8 @@
                                                                 <th></th>
                                                                 <th></th>
                                                                 <th></th>
-                                                                <th><h4 id="total">Bs/. 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th> 
+                                                                
+                                                                <th><h4 id="total">Bs</h4><input type="hidden" name="total_venta" id="total_venta"></th> 
                                                                 </tfoot>
                                                                 <tbody>
 
@@ -251,7 +253,7 @@
                                             <td>${item.stock}</td>
                                             <td></td>
                                            <!-- <td><a href="D1_ArticuloControlador?action=add&idarticulo=${item.idarticulo}&nombre=${item.nombre}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a></td>-->
-                                            <td><button id="btn" onclick="agregarDetalle(${item.idarticulo}, '${item.nombre}', 0)">Haz clic aquí</button></td>
+                                            <td><button id="btn" class="btn btn-success" onclick="agregarDetalle(${item.idarticulo}, '${item.nombre}', 0)"><ion-icon name="add"></ion-icon> Agregar</button></td>
                                         </tr>                                                                   
                                     </c:forEach>
                                 </tbody>onclick="saludar()"
@@ -316,7 +318,7 @@
                                                                 '<td><input type="number" name="precio_venta[]" id="precio_venta[]" value="' + precio_venta + '"></td>' +
                                                                 '<td><input type="number" name="descuento[]" value="' + descuento + '"></td>' +
                                                                 '<td><span name="subtotal" id="subtotal' + cont + '">' + subtotal + '</span></td>' +
-                                                                '<td><button type="button" onclick="modificarSubototales()" class="btn btn-info"><i class="fa fa-refresh"></i></button></td>' +
+                                                                '<td><button type="button" onclick="modificarSubototales()" class="btn btn-info"><ion-icon name="logo-ionic"></ion-icon></button></td>' +
                                                                 '</tr>';
                                                         cont++;
                                                         detalles = detalles + 1;

@@ -49,7 +49,7 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="D2_CategoriaControlador?action=view">
-                                                    <button type="button" class="btn btn-default">Regresar</button>
+                                                    <button type="button" class="btn btn-warning">Regresar</button>
                                                 </a>
                                             </div>                                                            
                                         </div>    

@@ -48,8 +48,9 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="D2_CategoriaControlador?action=add" >
-                                                    <button type="button" class="btn btn-default">Nuevo</button>
+                                                    <button type="button" class="btn btn-primary"><ion-icon name="add"></ion-icon>Nuevo</button>
                                                 </a>
+                                                &nbsp;
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="reportes/d2_reporteCategoria.jsp">
                                                         <button type="button" class="btn btn-success">
@@ -59,6 +60,7 @@
                                                         </button>
                                                     </a>
                                                 </div>  
+                                                &nbsp;
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="D2_CategoriaControlador?action=repClientes" target="_blank">
                                                         <button type="button" class="btn btn-secondary">

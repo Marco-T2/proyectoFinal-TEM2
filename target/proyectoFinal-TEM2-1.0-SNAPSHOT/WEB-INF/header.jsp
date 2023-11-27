@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="dist/css/adminlte.min.css">
         <!-- DataTable CSS -->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
     </head>
     <body class="hold-transition sidebar-mini">

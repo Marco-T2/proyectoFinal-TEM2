@@ -49,8 +49,8 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="B1_VentaControlador?action=add" >
-                                                    <button type="button" class="btn btn-default">Nuevo</button>
-                                                </a>
+                                                    <button type="button" class="btn btn-primary">Nuevo</button>
+                                                </a>&nbsp
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="reportes/b1_reporteVentas.jsp">
                                                         <button type="button" class="btn btn-success">
@@ -59,10 +59,10 @@
 
                                                         </button>
                                                     </a>
-                                                </div>  
+                                                </div> &nbsp 
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="B1_VentaControlador?action=repVenta" target="_blank">
-                                                        <button type="button" class="btn btn-secondary">
+                                                        <button type="button" class="btn btn-warning">
                                                             <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
                                                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
                                                         </button>
@@ -97,7 +97,7 @@
                                                             <td>${item.tipo_comprobante}</td>
                                                             <td>${item.num_comprobante}</td>
                                                             <td>${item.total_venta}</td>
-                                                            <td><a href="B1_VentaControlador?action=detalle_venta&idventa=${item.idventa}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
+                                                            <td><a href="B1_VentaControlador?action=detalle_venta&idventa=${item.idventa}"><i style="color: #dfd80c;"><ion-icon name="chevron-forward-circle"></ion-icon></i>Ver</a>
                                                             <!--<a href="B1_VentaControlador?action=delete&idventa=${item.idventa}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>-->
                                                         </tr>                                                                   
                                                     </c:forEach>

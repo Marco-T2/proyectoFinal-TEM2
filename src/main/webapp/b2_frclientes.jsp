@@ -50,7 +50,7 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="B2_ClienteControlador?action=view">
-                                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-lg">
                                                         Regresar
                                                     </button>
                                                 </a>

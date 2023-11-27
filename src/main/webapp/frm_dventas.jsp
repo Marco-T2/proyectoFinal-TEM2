@@ -62,7 +62,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label for="" class="form-label">Cliente</label>
-                                                        <select name="idcliente" class="form-control">
+                                                        <select disabled name="idcliente" class="form-control">
                                                             <option value="">${venta.cliente}</option>
 
                                                         </select>
@@ -72,7 +72,7 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Fecha</label>
-                                                        <input type="date" name="fecha_hora" value="${venta.fecha_hora}" class="form-control" placeholder="Ingresa fecha">
+                                                        <input disabled type="date" name="fecha_hora" value="${venta.fecha_hora}" class="form-control" placeholder="Ingresa fecha">
                                                     </div>
                                                 </div>
 
@@ -81,21 +81,21 @@
                                                 <div class="col-sm-4">
                                                     <div class="form-group">
                                                         <label>Tipo Comprobante(*):</label>
-                                                        <input type="text"  value="${venta.tipo_comprobante}" class="form-control">
+                                                        <input disabled type="text"  value="${venta.tipo_comprobante}" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Serie</label>
-                                                        <input type="text" name="serie_comprobante" value="${venta.serie_comprobante}" class="form-control" placeholder="Ingresa serie de comprobante">
+                                                        <input disabled type="text" name="serie_comprobante" value="${venta.serie_comprobante}" class="form-control" placeholder="Ingresa serie de comprobante">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Número</label>
-                                                        <input type="text" name="num_comprobante" value="${venta.num_comprobante}" class="form-control" placeholder="Ingresa número">
+                                                        <input disabled type="text" name="num_comprobante" value="${venta.num_comprobante}" class="form-control" placeholder="Ingresa número">
                                                     </div>
                                                 </div>
                                             </div>

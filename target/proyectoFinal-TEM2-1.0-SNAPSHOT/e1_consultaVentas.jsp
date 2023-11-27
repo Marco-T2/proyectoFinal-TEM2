@@ -48,7 +48,7 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="D1_ArticuloControlador?action=add" >
-                                                    <button type="button" class="btn btn-default">Nuevo</button>
+                                                    <button type="button" class="btn btn-primary"><ion-icon name="add"></ion-icon>Nuevo</button>
                                                 </a>
                                             </div>
                                         </div>

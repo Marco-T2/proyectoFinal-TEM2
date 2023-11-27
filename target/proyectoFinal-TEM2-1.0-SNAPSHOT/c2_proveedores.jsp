@@ -48,8 +48,8 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="C2_ProveedorControlador?action=add">
-                                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
-                                                        Nuevo
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">
+                                                        <ion-icon name="add"></ion-icon>Nuevo
                                                     </button>
                                                 </a>
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

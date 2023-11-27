@@ -51,7 +51,7 @@
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="B2_ClienteControlador?action=add">
                                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">
-                                                        Nuevo
+                                                        <ion-icon name="add"></ion-icon>Nuevo
                                                     </button>
                                                 </a>
                                                 &nbsp;
