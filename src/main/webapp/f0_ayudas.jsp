@@ -1,6 +1,6 @@
 <%
     if(session.getAttribute("usuario")!=null){
-   
+    
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -29,28 +29,70 @@
     <div class="content">
         <section class="content">
             <div class="container-fluid">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Tabla de clientes</h3>
-                    </div><!-- comment -->
-                    <div class="card-body"> 
-                        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                            <div class="row">   
-                                <div class="col-ms-12">
-                                    <h1>Aqui ira el contenido de la ayuda.. completar</h1>  
-                                </div>
-                            </div>
-                        </div>
+                <!-- Botones Rojos en Ventana -->
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <!-- Botón Rojo Administración -->
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#administracionModal"><strong>Administración</strong></button>
                     </div>
-
-                </div><!-- comment -->
-            </div><!-- comment -->
-            <!-- /.container-fluid -->
+                </div>
+                <!-- Botón Azul con Ventana de Sugerencias -->
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <!-- Botón Azul Sugerencia -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#sugerenciaModal"><strong>Sugerencia</strong></button>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     <!-- /.Main content -->
 </div>
 <!-- /.content-wrapper -->
+
+<!-- Modal para Administración -->
+<div class="modal fade" id="administracionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Administración</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <strong>Supervisor:</strong> 71238606<br>
+                <strong>Ingeniero de Software:</strong> 68091780<br>
+                <strong>Gerente General:</strong> 77451280
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Sugerencia -->
+<div class="modal fade" id="sugerenciaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Sugerencia</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Aquí puedes colocar el formulario para recibir sugerencias -->
+                <form action="procesar_sugerencia.jsp" method="post">
+                    <label for="sugerencia">Escribe tu sugerencia:</label>
+                    <textarea id="sugerencia" name="sugerencia" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Enviar Sugerencia">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <jsp:include page="WEB-INF/footer.jsp"/>
 <%}else{
 response.sendRedirect("login.jsp");

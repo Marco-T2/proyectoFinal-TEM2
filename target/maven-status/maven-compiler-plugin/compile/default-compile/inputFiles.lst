@@ -1,51 +1,51 @@
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ProveedorDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Categoria.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\A0_IndexControlador1.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\ConexionBD.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\RolControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Detalle_venta.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\CategoriaDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\D1_ArticuloControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\srvUsuario.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\AcercaControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\VentaDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\VentaAuditoria.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\E1_ConsultaVentaControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ArticuloDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\AuditoriaControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\D2_CategoriaControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ventaAuditoriaDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\CategoriaDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Usuario.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ArticuloDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\IngresoControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ClienteDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Detalle_ingreso.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\VentaDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Venta.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\H1_UsuarioControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\RolDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\RolDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ventaDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\IngresoAuditoria.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\IngresoDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\IndexVenControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\usuarioLogin.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ventaDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ClienteDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Articulo.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\C2_ProveedorControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Rol.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ingresoDAOimpl.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Ingreso.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\B2_ClienteControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\H2_PermisoControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\IngresoDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\AyudaControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ProveedorDAO.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\Conversiones.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\B1_VentaControlador.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Persona.java
-C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ingresoDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\IngresoControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Usuario.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\CategoriaDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\C2_ProveedorControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Categoria.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\Conversiones.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\VentaDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\D1_ArticuloControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\VentaAuditoria.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\B1_VentaControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Rol.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\usuarioLogin.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ventaDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Detalle_venta.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ProveedorDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\CategoriaDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ventaAuditoriaDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ProveedorDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\D2_CategoriaControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\RolDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\srvUsuario.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\VentaDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\IndexVenControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ingresoDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\A0_IndexControlador1.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ArticuloDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\H1_UsuarioControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\H2_PermisoControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Detalle_ingreso.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Venta.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\AcercaControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\IngresoAuditoria.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\IngresoDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\RolControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ClienteDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\AuditoriaControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\IngresoDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ventaDAO.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\AyudaControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Articulo.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ClienteDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\B2_ClienteControlador.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Ingreso.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ingresoDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\RolDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Persona.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ArticuloDAOimpl.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\ConexionBD.java
+D:\INGENIERIA 7MO\EMERGENTES_II\efra\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\E1_ConsultaVentaControlador.java

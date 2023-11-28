@@ -1,7 +1,6 @@
 <%
-    if (session.getAttribute("login") != "OK") {
-        response.sendRedirect("login.jsp");
-    }
+    if(session.getAttribute("usuario")!=null){
+    
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -31,25 +30,98 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Tabla de clientes</h3>
-                    </div><!-- comment -->
+            
                     <div class="card-body"> 
                         <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                             <div class="row">   
                                 <div class="col-ms-12">
-                                    <h1>Aqui ira el contenido de la ayuda.. completar</h1>  
+                                    <h1>Que ayuda requieres saber...</h1>  
+                                </div>
+                            </div>
+                            <!-- Botón Información General -->
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#infoGeneralModal">Información General</button>
+                                </div>
+                            </div>
+                            <!-- Botón Información Detallada -->
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <button class="btn btn-warning" data-toggle="modal" data-target="#infoDetalladaModal">Información Detallada</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                </div><!-- comment -->
-            </div><!-- comment -->
-            <!-- /.container-fluid -->
+                </div>
+            </div>
         </section>
     </div>
     <!-- /.Main content -->
 </div>
 <!-- /.content-wrapper -->
-<jsp:include page="WEB-INF/footer.jsp"/>
+
+<!-- Modal Información General -->
+<div class="modal fade" id="infoGeneralModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Información General</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Empresa:</strong> Sistema de Ventas Web</p>
+                <p><strong>Descripción de Productos:</strong> El sistema se especializa en la venta de productos de consumo, incluyendo dulces, lácteos y refrescos.</p>
+                <p><strong>Requisitos del Sistema:</strong></p>
+                <ul>
+                    <li><strong>Navegador compatible:</strong> Se recomienda el uso de Google Chrome.</li>
+                    <li><strong>Conexión a Internet estable.</strong></li>
+                </ul>
+                <p><strong>Historial de Actualizaciones:</strong></p>
+                <p>Versión 0.23 (Primera versión): aun no se actualizo por ser su creacion inicial</p>
+                <p><strong>Agradecimientos a Colaboraciones:</strong></p>
+                <p>Colaboraciones con el cuerpo docente y compañeros: Marco, Germán, Efraín.</p>
+                <p><strong>Redes Sociales:</strong></p>
+                <ul>
+                    <li><strong>WhatsApp:</strong> <a href="https://wa.link/ztmop7" target="_blank">https://wa.link/ztmop7</a></li>
+                    <li><strong>Github:</strong> <a href="https://github.com/Marco-T2/proyectoFinal-TEM2" target="_blank">https://github.com/Marco-T2/proyectoFinal-TEM2</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Información Detallada -->
+<div class="modal fade" id="infoDetalladaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><strong>Información Detallada</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Datos de Contacto:</strong></p>
+                <ul>
+                    <li> germanmiranda@0593gmail.com</li>
+                    <li> marco.tarqui.a@gmail.com</li>
+                    <li> eframaty03@gmail.com</li>
+                </ul>
+                <p><strong>Equipo de Personas:</strong></p>
+                <ul>
+                    <li> Marco Antonio Tarqui Alanoca</li>
+                    <li> Germán Miranda Condori</li>
+                    <li> Efraín Flores Rojas</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<jsp:include page="WEB-INF/footer.jsp"/> 
+<%}else{
+response.sendRedirect("login.jsp");
+    }
+%>
