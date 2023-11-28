@@ -103,6 +103,12 @@ public class B1_VentaControlador extends HttpServlet {
                 case "repVenta":
                     generarReporteVenta(response);
                     break;
+                case "repDetalleVenta":
+                    id = Integer.parseInt(request.getParameter("idventa"));
+                    //venta = dao.getById(id);
+
+                    generarReporteVentaDetalle(response, id);
+                    break;
                 default:
                     break;
             }
@@ -326,6 +332,133 @@ public class B1_VentaControlador extends HttpServlet {
         cell.setPhrase(new Phrase(String.valueOf(content), font));
         cell.setMinimumHeight(10); // Ajusta la altura mínima de la celda según tus necesidades
         return cell;
+    }
+
+    private void generarReporteVentaDetalle(HttpServletResponse response, int id) throws Exception {
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "inline; filename=reporte_empresa.pdf");
+
+        OutputStream out = response.getOutputStream();
+        // Configurar los márgenes del documento (en puntos)
+        float marginLeft = 36; // Márgen izquierdo en puntos
+        float marginRight = 36; // Márgen derecho en puntos
+        float marginTop = 72; // Márgen superior en puntos
+        float marginBottom = 72; // Márgen inferior en puntos
+        try {
+            Document documento = new Document(PageSize.A4.rotate(), marginLeft, marginRight, marginTop, marginBottom);
+
+            //PdfWriter.getInstance(documento, new FileOutputStream("ruta/del/archivo.pdf"));
+            documento.open();
+
+            // Insertar HTML en el PDF usando HtmlConverter de iText
+            String htmlContent = "<!DOCTYPE html>\n"
+                    + "<html>\n"
+                    + "<head>\n"
+                    + "<title>Reporte de Empresa</title>\n"
+                    + "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\n"
+                    + "<style>\n"
+                    + ".company-info h3 {\n"
+                    + "   margin-top: 0; /* Elimina el espacio superior */\n"
+                    + "}\n"
+                    + ".company-logo img {\n"
+                    + "   max-width: 100px; /* Ajusta el ancho máximo de la imagen */\n"
+                    + "   height: auto; /* Mantén la relación de aspecto */\n"
+                    + "}\n"
+                    + ".center-text {\n"
+                    + "   text-align: center; /* Centra el texto horizontalmente */\n"
+                    + "}\n"
+                    + "</style>\n"
+                    + "</head>\n"
+                    + "<body>\n"
+                    + "<div class=\"container\">\n"
+                    + "<div class=\"row\">\n"
+                    + // Fila para el logo
+                    "<div class=\"col-md-12\">\n"
+                    + "<div class=\"company-logo text-center\">\n"
+                    + "<img src=\"https://www.innovaweb.cl/wp-content/uploads/2018/10/logo2-1.png\" alt=\"Logo de la Empresa\" class=\"img-fluid\">\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "<div class=\"row\">\n"
+                    + // Fila para la información de la empresa
+                    "<div class=\"col-md-12\">\n"
+                    + "<div class=\"company-info\">\n"
+                    + "<h3>Universidad publica del El Alto</h3>\n"
+                    + "<p>La Paz</p>\n"
+                    + "<p>Teléfono: 123-456-7890</p>\n"
+                    + "<p>Correo electrónico: tem2@sisempresa.com</p>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "<div class=\"row\">\n"
+                    + // Fila para el reporte de ventas
+                    "<div class=\"col-md-12 center-text\">\n" // Agrega la clase center-text
+                    + "<h2>Reporte Detalle Venta</h2>\n"
+                    + "<table class=\"table table-bordered table-striped\">\n"
+                    + "<thead class=\"thead-dark\">\n"
+                    + "<tr>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">id</th>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">Articuculo</th>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">Cantidad</th>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">Precio</th>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">Descuento</th>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">Sub total</th>\n"
+                    + "</tr>\n"
+                    + "</thead>\n"
+                    + "<tbody>\n";
+
+            VentaDAO dao = new VentaDAOimpl();
+            ClienteDAO daoCliente = new ClienteDAOimpl();
+            ArticuloDAO daoArticulo = new ArticuloDAOimpl();
+            List<Persona> lista_clientes = null;
+            Venta venta = new Venta();
+
+            Detalle_ventaDAO daoDetalleV = new Detalle_ventaDAOimpl();
+            //Detalle_venta d_venta = new Detalle_venta();
+            List<Detalle_venta> lista1 = null;
+
+            venta = dao.getById(id);
+            lista1 = daoDetalleV.getAllId(id);
+
+            htmlContent += "<p style=\"text-align: left;\">Nombre: " + venta.getCliente() + "<br>"
+                    + "Numero de factura: " + venta.getNum_comprobante() + "<br>"
+                    + "Fecha: " + venta.getFecha_hora() + "</p>\n";
+
+            for (Detalle_venta detalleVenta : lista1) {
+                htmlContent += "<tr>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleVenta.getIdventa() + "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleVenta.getArticulo() + "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleVenta.getCantidad() + "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleVenta.getPrecio_venta() + "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleVenta.getDescuento() + "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleVenta.getSubtotal() + "</td>\n"
+                        + "</tr>\n";
+            }
+            htmlContent += "<tr>"
+                    + "<td colspan=5 style=\"font-size: 12px;\">TOTAL</td>\n"
+                    + "<td style=\"font-size: 12px;\">" + venta.getTotal_venta() + " </td>\n"
+                    + "</tr>";
+
+            java.util.Date fechaActual = new java.util.Date();
+            java.text.SimpleDateFormat formato = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String fechaHora = formato.format(fechaActual);
+
+            htmlContent += "</tbody>\n"
+                    + "</table>\n"
+                    + "<p style=\"text-align: left; font-size: 10px;\">Reporte generado el: " + fechaHora + "</p>\n"
+                    + // Agregar la fecha y hora al final
+                    "</div>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "</body>\n"
+                    + "</html>";
+
+            // Convertir HTML a PDF y agregarlo al documento
+            HtmlConverter.convertToPdf(htmlContent, out);
+
+            documento.close();
+        } catch (DocumentException ex) {
+        }
     }
 
 }

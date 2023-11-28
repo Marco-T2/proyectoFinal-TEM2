@@ -73,7 +73,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="srvUsuario?accion=cerrar" role="button">
-                            <i class="btn-danger">Cerrar Session</i>
+                            <i class="btn btn-danger btn-sm">Cerrar Session</i>
                         </a>
                     </li>
                 </ul>

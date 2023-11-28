@@ -1,6 +1,6 @@
 <%
-    if(session.getAttribute("usuario")!=null){
-    
+    if (session.getAttribute("usuario") != null) {
+
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -51,6 +51,14 @@
                                                     <button type="button" class="btn btn-default">Regresar</button>
                                                 </a>
                                             </div>
+                                            &nbsp;
+                                            <a href="B1_VentaControlador?action=repDetalleVenta&idventa=${venta.idventa}" target="_blank">
+                                          
+                                                <button type="button" class="btn btn-warning">
+                                                    <i class="fa fa-file" aria-hidden="true"></i> Descargar PDF
+                                                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
                                     <form action="B1_VentaControlador" method="post">
@@ -154,7 +162,7 @@
 <!-- /.content-wrapper -->
 
 <jsp:include page="WEB-INF/footer.jsp"/> 
-<%}else{
-response.sendRedirect("login.jsp");
+<%} else {
+        response.sendRedirect("login.jsp");
     }
 %>
