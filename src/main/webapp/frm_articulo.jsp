@@ -1,6 +1,6 @@
 <%
-    if(session.getAttribute("usuario")==null){
-   
+    if(session.getAttribute("usuario")!=null){
+    
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -45,10 +45,11 @@
                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
-                                            <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="D1_ArticuloControlador?action=view">
-                                                </a>
-                                            </div>                                                            
+                                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-lg">
+                                                        Regresar
+                                                    </button>
+                                                </a>                                                          
                                         </div>    
                                     </div>                                                    
                                     <form action="D1_ArticuloControlador" method="post">
