@@ -185,21 +185,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="AuditoriaControlador?action=view1" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Auditoria Ventas</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="AuditoriaControlador?action=view2" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Auditoria Compras</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Otros - 1</p>
                             </a>
                         </li>
                     </ul>
