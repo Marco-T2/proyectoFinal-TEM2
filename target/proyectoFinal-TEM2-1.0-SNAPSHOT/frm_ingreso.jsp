@@ -33,7 +33,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <input type="text"name="idusuario" value="${usuario.idusuario}">
+                                                    <input type="hidden"name="idusuario" value="${usuario.idusuario}">
                                                     <div class="form-group">
                                                         <label for="" class="form-label">Proveedor</label>
                                                         <select name="idproveedor" class="form-control">

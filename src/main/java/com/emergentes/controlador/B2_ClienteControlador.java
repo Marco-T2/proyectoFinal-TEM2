@@ -171,7 +171,7 @@ public class B2_ClienteControlador extends HttpServlet {
                     + // Fila para el logo
                     "<div class=\"col-md-12\">\n"
                     + "<div class=\"company-logo text-center\">\n"
-                    + "<img src=\"https://www.innovaweb.cl/wp-content/uploads/2018/10/logo2-1.png\" alt=\"Logo de la Empresa\" class=\"img-fluid\">\n"
+                    + "<img src=\"https://serviciopagina.upea.bo/Carrera/Logos/377b68ca-9d21-477b-a1aa-56fd21d9d1b4.png\" alt=\"Logo de la Empresa\" class=\"img-fluid\">\n"
                     + "</div>\n"
                     + "</div>\n"
                     + "</div>\n"
@@ -179,10 +179,10 @@ public class B2_ClienteControlador extends HttpServlet {
                     + // Fila para la información de la empresa
                     "<div class=\"col-md-12\">\n"
                     + "<div class=\"company-info\">\n"
-                    + "<h3>Universidad publica del El Alto</h3>\n"
-                    + "<p>La Paz</p>\n"
-                    + "<p>Teléfono: 123-456-7890</p>\n"
-                    + "<p>Correo electrónico: tem2@sisempresa.com</p>\n"
+                    + "<h3>Universidad Publica del El Alto</h3>\n"
+                    + "<p>Carrera: Ingenieria de sistemas</p>\n"
+                    + "<p>Docente: M Sc. Mario Torrez</p>\n"
+                    + "<p>Materia ¨TEM-742 Tecnologias emergentes II</p>\n"
                     + "</div>\n"
                     + "</div>\n"
                     + "</div>\n"

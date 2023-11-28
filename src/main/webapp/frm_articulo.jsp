@@ -76,7 +76,7 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Stock</label>
-                                                        <input type="numeric" name="stock" value="${articulo.stock}" class="form-control" placeholder="Ingresa el stock">
+                                                        <input type="numeric" name="stock" value="${articulo.stock}" class="form-control" placeholder="Ingresa el stock" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
