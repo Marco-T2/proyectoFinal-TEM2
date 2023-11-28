@@ -39,7 +39,7 @@
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="ingreso.php" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="IngresoControlador" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <c:set var="suma" value="0" />
@@ -57,7 +57,7 @@
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="venta.php" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="B1_VentaControlador" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
 
@@ -107,7 +107,7 @@
                                         <tr class="odd">
                                             <td>${item.idarticulo}</td>
                                             <td><img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">${item.nombre}</td>
-                                            <td>${item.stock} Undidades</td>
+                                            <td>${item.stock} Unidades</td>
                                         </tr>                                                                   
                                     </c:forEach>
                                 </tbody>

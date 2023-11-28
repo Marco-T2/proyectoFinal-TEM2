@@ -176,7 +176,7 @@ public class B1_VentaControlador extends HttpServlet {
                 // registrando detalle de venta
                 String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
                 String user = "root"; // Esta variable contiene el nombre de usuario
-                String password = ""; // Esta variable contiene la contraseña
+                String password = "1234567"; // Esta variable contiene la contraseña
                 Connection conn = DriverManager.getConnection(url, user, password);
                 PreparedStatement dv = conn.prepareStatement("INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) values (?,?,?,?,?)");
 
@@ -420,7 +420,7 @@ public class B1_VentaControlador extends HttpServlet {
             venta = dao.getById(id);
             lista1 = daoDetalleV.getAllId(id);
 
-            htmlContent += "<p style=\"text-align: left;\">Nombre: " + venta.getCliente() + "<br>"
+            htmlContent += "<p style=\"text-align: left;\">Cliente: " + venta.getCliente() + "<br>"
                     + "Numero de factura: " + venta.getNum_comprobante() + "<br>"
                     + "Fecha: " + venta.getFecha_hora() + "</p>\n";
 

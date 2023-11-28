@@ -160,7 +160,7 @@ public class VentaDAOimpl extends ConexionBD implements VentaDAO {
         Vector<String> meses = new Vector<>();
         try {
             this.conectar();
-            String sql = "SELECT DATE_FORMAT(fecha_hora, '%M') AS meses FROM venta  GROUP BY MONTH(fecha_hora)";
+            String sql = "SELECT DATE_FORMAT(fecha_hora, '%M') AS meses FROM venta WHERE YEAR(fecha_hora) = YEAR(CURDATE()) GROUP BY MONTH(fecha_hora) ORDER BY MONTH(fecha_hora);";
             PreparedStatement ps = this.conn.prepareStatement(sql);  
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

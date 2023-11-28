@@ -48,7 +48,7 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dt-buttons btn-group flex-wrap">
                                                 <a href="B1_VentaControlador" >
-                                                    <button type="button" class="btn btn-default">Regresar</button>
+                                                    <button type="button" class="btn btn-success">Regresar</button>
                                                 </a>
                                             </div>
                                             &nbsp;
