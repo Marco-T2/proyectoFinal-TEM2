@@ -36,7 +36,7 @@ public class srvUsuario extends HttpServlet {
         } catch (Exception e) {
             try {
                 System.out.println("Error 1" + e.getMessage());
-                this.getServletConfig().getServletContext().getRequestDispatcher("/mensaje.jsp").forward(request, response);
+                //this.getServletConfig().getServletContext().getRequestDispatcher("/mensaje.jsp").forward(request, response);
             } catch (Exception ex) {
                 System.out.println("Error" + ex.getMessage());
             }
