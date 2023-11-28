@@ -116,7 +116,7 @@ public class srvUsuario extends HttpServlet {
             //request.setAttribute("msje", "Bienvenido al sistema");
             response.sendRedirect("A0_IndexControlador");
             //this.getServletConfig().getServletContext().getRequestDispatcher("indexVendedor.jsp").forward(request, response);
-        } else if (usuario != null && usuario.getRolC().getNombre().equals("Técnico")) {
+        } else if (usuario != null && usuario.getRolC().getNombre().equals("Tecnico")) {
             sesion = request.getSession();
             sesion.setAttribute("usuario", usuario);
             //request.setAttribute("msje", "Bienvenido al sistema");

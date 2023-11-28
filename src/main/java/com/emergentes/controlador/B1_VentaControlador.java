@@ -126,7 +126,7 @@ public class B1_VentaControlador extends HttpServlet {
         String estado = "Aceptado";
 
         //int iddetalle = Integer.parseInt(request.getParameter("iddetalle_venta"));
-        int id_venta = 1;
+        int id_venta = Integer.parseInt(request.getParameter("idusuario"));
         String[] idarticulo = request.getParameterValues("idarticulo[]");
         String[] cantidad = request.getParameterValues("cantidad[]");
         String[] precio_venta = request.getParameterValues("precio_venta[]");

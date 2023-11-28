@@ -118,7 +118,7 @@ public class IngresoControlador extends HttpServlet {
         String estado = "Aceptado";
         // datos para el registro de la tabla detalle_ingreso
         //int iddetalle = Integer.parseInt(request.getParameter("iddetalle_venta"));
-        int id_ingreso = 1;
+        int id_ingreso = Integer.parseInt(request.getParameter("idusuario"));
         String[] idarticulo = request.getParameterValues("idarticulo[]");
         String[] cantidad = request.getParameterValues("cantidad[]");
         String[] precio_compra = request.getParameterValues("precio_compra[]");
