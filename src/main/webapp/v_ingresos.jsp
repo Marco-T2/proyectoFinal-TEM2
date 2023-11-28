@@ -96,7 +96,7 @@
                                                             <td>${item.tipo_comprobante}</td>
                                                             <td>${item.num_comprobante}</td>
                                                             <td>${item.total_compra}</td>
-                                                            <td><a href="IngresoControlador?action=detalle_venta&idingreso=${item.idingreso}"><i class="fa-solid fa-pen-to-square"><ion-icon name="create-outline"></ion-icon></i></a>
+                                                            <td><a href="IngresoControlador?action=detalle_venta&idingreso=${item.idingreso}"><i style="color: #dfd80c;"><ion-icon name="chevron-forward-circle"></ion-icon></i>Ver</a>
                                                             <!--<a href="B1_VentaControlador?action=delete&idventa=${item.idingreso}"onclick="return(confirm('Estas seguro de eliminar'))"><i class="fa-solid fa-trash-can"><ion-icon name="trash-outline"></ion-icon></i></a></td>-->
                                                         </tr>                                                                   
                                                     </c:forEach>

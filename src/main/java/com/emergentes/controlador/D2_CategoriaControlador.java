@@ -3,7 +3,15 @@ package com.emergentes.controlador;
 import com.emergentes.dao.CategoriaDAO;
 import com.emergentes.dao.CategoriaDAOimpl;
 import com.emergentes.modelo.Categoria;
+import com.itextpdf.html2pdf.HtmlConverter;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -39,6 +47,9 @@ public class D2_CategoriaControlador extends HttpServlet {
                     id = Integer.parseInt(request.getParameter("idcategoria"));
                     dao.delete(id);
                     response.sendRedirect("D2_CategoriaControlador");
+                    break;
+                case "repCategoria":
+                    generarReporteCategoria(response);
                     break;
                 case "view":
                     //obtener la lista de objetos (registros)
@@ -88,4 +99,111 @@ public class D2_CategoriaControlador extends HttpServlet {
         response.sendRedirect("D2_CategoriaControlador");
     }
 
+    private void generarReporteCategoria(HttpServletResponse response) throws IOException, Exception {
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "inline; filename=reporte_empresa.pdf");
+
+        OutputStream out = response.getOutputStream();
+// Configurar los márgenes del documento (en puntos)
+        float marginLeft = 36; // Márgen izquierdo en puntos
+        float marginRight = 36; // Márgen derecho en puntos
+        float marginTop = 72; // Márgen superior en puntos
+        float marginBottom = 72; // Márgen inferior en puntos
+        try {
+            Document documento = new Document(PageSize.A4.rotate(), marginLeft, marginRight, marginTop, marginBottom);
+
+            //PdfWriter.getInstance(documento, new FileOutputStream("ruta/del/archivo.pdf"));
+            documento.open();
+
+            // Insertar HTML en el PDF usando HtmlConverter de iText
+            String htmlContent = "<!DOCTYPE html>\n"
+                    + "<html>\n"
+                    + "<head>\n"
+                    + "<title>Reporte de Empresa</title>\n"
+                    + "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\n"
+                    + "<style>\n"
+                    + ".company-info h3 {\n"
+                    + "   margin-top: 0; /* Elimina el espacio superior */\n"
+                    + "}\n"
+                    + ".company-logo img {\n"
+                    + "   max-width: 100px; /* Ajusta el ancho máximo de la imagen */\n"
+                    + "   height: auto; /* Mantén la relación de aspecto */\n"
+                    + "}\n"
+                    + ".center-text {\n"
+                    + "   text-align: center; /* Centra el texto horizontalmente */\n"
+                    + "}\n"
+                    + "</style>\n"
+                    + "</head>\n"
+                    + "<body>\n"
+                    + "<div class=\"container\">\n"
+                    + "<div class=\"row\">\n"
+                    + // Fila para el logo
+                    "<div class=\"col-md-12\">\n"
+                    + "<div class=\"company-logo text-center\">\n"
+                    + "<img src=\"https://www.innovaweb.cl/wp-content/uploads/2018/10/logo2-1.png\" alt=\"Logo de la Empresa\" class=\"img-fluid\">\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "<div class=\"row\">\n"
+                    + // Fila para la información de la empresa
+                    "<div class=\"col-md-12\">\n"
+                    + "<div class=\"company-info\">\n"
+                    + "<h3>Universidad publica del El Alto</h3>\n"
+                    + "<p>La Paz</p>\n"
+                    + "<p>Teléfono: 123-456-7890</p>\n"
+                    + "<p>Correo electrónico: tem2@sisempresa.com</p>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "<div class=\"row\">\n"
+                    + // Fila para el reporte de ventas
+                    "<div class=\"col-md-12 center-text\">\n" // Agrega la clase center-text
+                    + "<h2>Reporte Categoria</h2>\n"
+                    + "<table class=\"table table-bordered table-striped\">\n"
+                    + "<thead class=\"thead-dark\">\n"
+                    + "<tr>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">Id</th>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">nombre</th>\n"
+                    + "<th scope=\"col\" style=\"font-size: 13px; text-align: center;\">Descripcion</th>\n"
+                    + "</tr>\n"
+                    + "</thead>\n"
+                    + "<tbody>\n";
+            CategoriaDAO dao = new CategoriaDAOimpl();
+            Categoria cat = new Categoria();
+            List<Categoria> lista = dao.getAll();
+            for (Categoria per : lista) {
+                htmlContent += "<tr>\n"
+                        + "<td style=\"font-size: 12px;\">" + per.getIdcategoria() + "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + per.getNombre() + "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + per.getDescripcion() + "</td>\n"
+                        + "</tr>\n";
+            }
+
+            java.util.Date fechaActual = new java.util.Date();
+            java.text.SimpleDateFormat formato = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String fechaHora = formato.format(fechaActual);
+
+            htmlContent += "</tbody>\n"
+                    + "</table>\n"
+                    + "<p style=\"text-align: left; font-size: 10px;\">Reporte generado el: " + fechaHora + "</p>\n"
+                    + // Agregar la fecha y hora al final
+                    "</div>\n"
+                    + "</div>\n"
+                    + "</div>\n"
+                    + "</body>\n"
+                    + "</html>";
+
+            // Convertir HTML a PDF y agregarlo al documento
+            HtmlConverter.convertToPdf(htmlContent, out);
+
+            documento.close();
+        } catch (DocumentException ex) {
+        }
+    }
+
+    private PdfPCell getStyledCell(Object content, Font font, PdfPCell cell) {
+        cell.setPhrase(new Phrase(String.valueOf(content), font));
+        cell.setMinimumHeight(10); // Ajusta la altura mínima de la celda según tus necesidades
+        return cell;
+    }
 }

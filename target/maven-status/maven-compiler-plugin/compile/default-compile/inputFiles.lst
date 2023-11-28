@@ -10,6 +10,8 @@ C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\srvUsuario.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\AcercaControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\VentaDAO.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ingresoAuditoriaDAO.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\VentaAuditoria.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\E1_ConsultaVentaControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\UsuarioDAO.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ArticuloDAOimpl.java
@@ -27,6 +29,7 @@ C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\RolDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\Validate.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ventaDAO.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\IngresoAuditoria.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\IngresoDAOimpl.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\IndexVenControlador.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\usuarioLogin.java
@@ -46,5 +49,6 @@ C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\Logout.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\utiles\Conversiones.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\controlador\B1_VentaControlador.java
+C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\ventaAuditoriaDAO.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\modelo\Persona.java
 C:\Users\marco\Desktop\TEMII-2023\proyectoFinal-TEM2\proyectoFinal-TEM2\src\main\java\com\emergentes\dao\Detalle_ingresoDAO.java

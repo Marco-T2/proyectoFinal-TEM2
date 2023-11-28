@@ -2,6 +2,7 @@ com\emergentes\controlador\IndexVenControlador.class
 com\emergentes\dao\IngresoDAOimpl.class
 com\emergentes\utiles\Validate.class
 com\emergentes\controlador\B2_ClienteControlador.class
+com\emergentes\modelo\VentaAuditoria.class
 com\emergentes\controlador\D1_ArticuloControlador.class
 com\emergentes\controlador\H1_UsuarioControlador.class
 com\emergentes\dao\Detalle_ventaDAOimpl.class
@@ -34,7 +35,9 @@ com\emergentes\dao\VentaDAO.class
 com\emergentes\modelo\Detalle_ingreso.class
 com\emergentes\controlador\A0_IndexControlador1.class
 com\emergentes\utiles\usuarioLogin.class
+com\emergentes\dao\ingresoAuditoriaDAO.class
 com\emergentes\dao\RolDAO.class
+com\emergentes\dao\ventaAuditoriaDAO.class
 com\emergentes\dao\IngresoDAO.class
 com\emergentes\dao\ProveedorDAOimpl.class
 com\emergentes\dao\CategoriaDAOimpl.class
@@ -48,3 +51,4 @@ com\emergentes\controlador\B1_VentaControlador.class
 com\emergentes\dao\ArticuloDAOimpl.class
 com\emergentes\modelo\Detalle_venta.class
 com\emergentes\controlador\D2_CategoriaControlador.class
+com\emergentes\modelo\IngresoAuditoria.class
