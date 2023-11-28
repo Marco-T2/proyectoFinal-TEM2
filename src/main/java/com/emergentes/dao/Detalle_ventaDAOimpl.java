@@ -104,7 +104,35 @@ public class Detalle_ventaDAOimpl extends ConexionBD implements Detalle_ventaDAO
 
     @Override
     public List<Detalle_venta> getAll() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Detalle_venta> listaP = null;
+        try {
+            //Como es una extencion de conectar se paso todos los metodos para utilizar
+            this.conectar();
+            String sql = "SELECT a.nombre AS nombre_producto,d.precio_venta AS precio_unitario,SUM(d.cantidad) AS c_total_vendido,SUM(d.precio_venta * d.cantidad) AS total_venta FROM venta v INNER JOIN detalle_venta d ON v.idventa = d.idventa INNER JOIN articulo a ON d.idarticulo = a.idarticulo WHERE MONTH(v.fecha_hora) = MONTH(CURRENT_DATE()) AND YEAR(v.fecha_hora) = YEAR(CURRENT_DATE()) GROUP BY d.idarticulo ORDER BY c_total_vendido DESC LIMIT 6";
+            PreparedStatement ps = this.conn.prepareStatement(sql);
+            //Se tiene el resultado en rs    
+            ResultSet rs = ps.executeQuery();
+            //Iniciamos la lista
+            listaP = new ArrayList<Detalle_venta>();
+            //Cambiamos el if por while al ser mas de un registro
+            while (rs.next()) {
+                //Instanciasmo un nuevo objeto
+                Detalle_venta productos_masVen = new Detalle_venta();
+                productos_masVen.setArticulo(rs.getString("nombre_producto"));
+                productos_masVen.setPrecio_venta(rs.getDouble("precio_unitario"));
+                productos_masVen.setCantidad(rs.getInt("c_total_vendido"));
+                productos_masVen.setSubtotal(rs.getDouble("total_venta"));
+                listaP.add(productos_masVen);
+            }
+            rs.close();
+            ps.close();
+            //Recomendable usar un try cath
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return listaP;
     }
 
 }

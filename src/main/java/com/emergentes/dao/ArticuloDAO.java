@@ -9,4 +9,5 @@ public interface ArticuloDAO {
     public void delete(int id)throws Exception;
     public Articulo getById(int id)throws Exception;
     public List<Articulo>getAll()throws Exception; 
+    public List<Articulo>getAllStock()throws Exception;
 }

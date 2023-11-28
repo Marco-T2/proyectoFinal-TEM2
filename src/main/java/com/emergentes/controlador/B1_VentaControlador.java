@@ -176,7 +176,7 @@ public class B1_VentaControlador extends HttpServlet {
                 // registrando detalle de venta
                 String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
                 String user = "root"; // Esta variable contiene el nombre de usuario
-                String password = "1234567"; // Esta variable contiene la contraseña
+                String password = ""; // Esta variable contiene la contraseña
                 Connection conn = DriverManager.getConnection(url, user, password);
                 PreparedStatement dv = conn.prepareStatement("INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) values (?,?,?,?,?)");
 

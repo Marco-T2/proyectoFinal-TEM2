@@ -133,4 +133,35 @@ public class ArticuloDAOimpl extends ConexionBD implements ArticuloDAO {
         return lista;
     }
 
+    public List<Articulo> getAllStock() throws Exception {
+        List<Articulo> listaA = null;
+        try {
+            //Como es una extencion de conectar se paso todos los metodos para utilizar
+            this.conectar();
+            String sql = "SELECT idarticulo,nombre,stock FROM articulo WHERE stock <= 5 LIMIT 6;";
+            PreparedStatement ps = this.conn.prepareStatement(sql);
+            //Se tiene el resultado en rs    
+            ResultSet rs = ps.executeQuery();
+            //Iniciamos la lista
+            listaA = new ArrayList<Articulo>();
+            //Cambiamos el if por while al ser mas de un registro
+            while (rs.next()) {
+                //Instanciasmo un nuevo objeto
+                Articulo stockArt = new Articulo();
+                stockArt.setIdarticulo(rs.getInt("idarticulo"));
+                stockArt.setNombre(rs.getString("nombre"));
+                stockArt.setStock(rs.getInt("stock"));
+                listaA.add(stockArt);
+            }
+            rs.close();
+            ps.close();
+            //Recomendable usar un try cath
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.desconectar();
+        }
+        return listaA;
+
+    }
 }

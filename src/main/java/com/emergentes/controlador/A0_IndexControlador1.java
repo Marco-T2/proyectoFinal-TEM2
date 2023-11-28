@@ -1,9 +1,15 @@
 package com.emergentes.controlador;
 
+import com.emergentes.dao.ArticuloDAO;
+import com.emergentes.dao.ArticuloDAOimpl;
+import com.emergentes.dao.Detalle_ventaDAO;
+import com.emergentes.dao.Detalle_ventaDAOimpl;
 import com.emergentes.dao.IngresoDAO;
 import com.emergentes.dao.IngresoDAOimpl;
 import com.emergentes.dao.VentaDAO;
 import com.emergentes.dao.VentaDAOimpl;
+import com.emergentes.modelo.Articulo;
+import com.emergentes.modelo.Detalle_venta;
 import com.emergentes.modelo.Venta;
 import java.io.IOException;
 import java.util.Arrays;
@@ -25,6 +31,8 @@ public class A0_IndexControlador1 extends HttpServlet {
 
         Vector<Double> compras = new Vector<>();
         Vector<String> mescompra = new Vector<>();
+        
+         Detalle_ventaDAO daoMasVendido = new Detalle_ventaDAOimpl();
         try {       //Permite evaluar el prametro
             Venta venta = new Venta();
             VentaDAO dao = new VentaDAOimpl();
@@ -32,6 +40,9 @@ public class A0_IndexControlador1 extends HttpServlet {
 
             IngresoDAO daoCompraMeses = new IngresoDAOimpl();
             IngresoDAO daoMesC = new IngresoDAOimpl();
+            
+             ArticuloDAO daoStockA = new ArticuloDAOimpl();
+           
             String action = (request.getParameter("action") != null) ? request.getParameter("action") : "view";
 
             switch (action) {
@@ -49,6 +60,14 @@ public class A0_IndexControlador1 extends HttpServlet {
 
                     mescompra = daoMesC.getMesC();
                     request.setAttribute("mescompra", mescompra);
+                    
+                    //reporte de productos mas vendidos
+                    List<Detalle_venta> masVendido = daoMasVendido.getAll();
+                    request.setAttribute("masVendido", masVendido);
+                    
+                    // reporte de los productos con un stock menor a 5
+                    List<Articulo> stockA = daoStockA.getAllStock();
+                    request.setAttribute("stockA", stockA);
 
                     request.getRequestDispatcher("a0_index.jsp").forward(request, response);
 
