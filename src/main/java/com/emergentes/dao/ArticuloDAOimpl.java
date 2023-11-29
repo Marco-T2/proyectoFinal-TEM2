@@ -101,7 +101,8 @@ public class ArticuloDAOimpl extends ConexionBD implements ArticuloDAO {
         try {
             //Como es una extencion de conectar se paso todos los metodos para utilizar
             this.conectar();
-            String sql = "select a.*,c.nombre as categoria from articulo a LEFT JOIN categoria c ON a.idcategoria=c.idcategoria";
+            //String sql = "select a.*,c.nombre as categoria from articulo a LEFT JOIN categoria c ON a.idcategoria=c.idcategoria";
+            String sql="select a.*,c.nombre as categoria,di.precio_venta from articulo a LEFT JOIN categoria c ON a.idcategoria=c.idcategoria LEFT join detalle_ingreso di on a.idarticulo=di.idarticulo GROUP by a.nombre";
             PreparedStatement ps = this.conn.prepareStatement(sql);
             //Se tiene el resultado en rs    
             ResultSet rs = ps.executeQuery();
@@ -120,6 +121,7 @@ public class ArticuloDAOimpl extends ConexionBD implements ArticuloDAO {
                 art.setCondicion(rs.getInt("condicion"));
                 art.setIdcategoria(rs.getInt("idcategoria"));
                 art.setCategoria(rs.getString("categoria"));
+                art.setPrecio_venta(rs.getDouble("precio_venta"));
                 lista.add(art);
             }
             rs.close();

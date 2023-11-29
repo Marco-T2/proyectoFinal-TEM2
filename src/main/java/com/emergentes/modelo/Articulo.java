@@ -9,6 +9,7 @@ public class Articulo {
     private String imagen;
     private int condicion;
     private String categoria;
+    private Double precio_venta;
 
     public Articulo() {
     }
@@ -83,6 +84,14 @@ public class Articulo {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public Double getPrecio_venta() {
+        return precio_venta;
+    }
+
+    public void setPrecio_venta(Double precio_venta) {
+        this.precio_venta = precio_venta;
     }
         
 }
