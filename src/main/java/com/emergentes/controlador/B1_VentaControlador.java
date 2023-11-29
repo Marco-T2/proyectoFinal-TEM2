@@ -137,13 +137,7 @@ public class B1_VentaControlador extends HttpServlet {
         String[] cantidad = request.getParameterValues("cantidad[]");
         String[] precio_venta = request.getParameterValues("precio_venta[]");
         String[] descuento = request.getParameterValues("descuento[]");
-        //int idarticulo = Integer.parseInt(request.getParameter("idarticulo[]"));
-        // int cantidad = Integer.parseInt(request.getParameter("cantidad[]"));
-        //double precio_venta = Double.parseDouble(request.getParameter("precio_venta[]"));
-        //double descuento = Double.parseDouble(request.getParameter("descuento[]"));
-        /* for (int i = 0; i < idarticulo.length; i++) {
-            System.out.println("idarticulo: " + idarticulo[i] + " cantidad: " + cantidad[i] + " precio_venta: " + precio_venta[i] + " descuento: " + descuento[i]);
-        }*/
+        
 
         Venta venta = new Venta();
         venta.setIdventa(id);
@@ -158,12 +152,7 @@ public class B1_VentaControlador extends HttpServlet {
 
         // List<Detalle_venta> detalles = new ArrayList<>();
         Detalle_venta de_venta = new Detalle_venta();
-        //de_venta.setIddetalle_venta(iddetalle);
-        //de_venta.setIdventa(idventa);
-        /*de_venta.setIdarticulo(idarticulo);
-        de_venta.setCantidad(cantidad);
-        de_venta.setPrecio_venta(precio_venta);
-        de_venta.setDescuento(descuento);*/
+
         if (id == 0) {
             //Nuevo
             VentaDAO dao = new VentaDAOimpl();
@@ -174,10 +163,7 @@ public class B1_VentaControlador extends HttpServlet {
                 //venta.setIdventa(id_venta);
                 System.out.println("id de venta: " + id_venta);
                 // registrando detalle de venta
-               /* String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
-                String user = "root"; // Esta variable contiene el nombre de usuario
-                String password = ""; // Esta variable contiene la contraseña
-                Connection conn = DriverManager.getConnection(url, user, password);*/
+
                 ConexionBD conexion = new ConexionBD();
                 Connection conn = conexion.conectar();
                 PreparedStatement dv = conn.prepareStatement("INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) values (?,?,?,?,?)");
@@ -188,12 +174,7 @@ public class B1_VentaControlador extends HttpServlet {
                     dv.setInt(4, (Integer.parseInt(precio_venta[i])));
                     dv.setInt(5, (Integer.parseInt(descuento[i])));
                     dv.executeUpdate();
-                    /*de_venta.setIdventa(id_venta);
-                    de_venta.setIdarticulo(Integer.parseInt(idarticulo[i]));
-                    de_venta.setCantidad(Integer.parseInt(cantidad[i]));
-                    de_venta.setPrecio_venta(Double.parseDouble(precio_venta[i]));
-                    de_venta.setDescuento(Double.parseDouble(descuento[i]));*/
-
+                   
                     System.out.println("contador: " + i);
                 }
                 // daoDV.insert(de_venta);

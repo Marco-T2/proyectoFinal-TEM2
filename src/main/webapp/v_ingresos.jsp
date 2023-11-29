@@ -50,6 +50,7 @@
                                                 <a href="IngresoControlador?action=add" >
                                                     <button type="button" class="btn btn-primary"><ion-icon name="add"></ion-icon>Nuevo</button>
                                                 </a>
+                                                &nbsp
                                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                                     <a href="reportes/v_reporteIngresos.jsp">
                                                         <button type="button" class="btn btn-success">

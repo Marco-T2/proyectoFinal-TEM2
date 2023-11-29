@@ -148,13 +148,8 @@ public class IngresoControlador extends HttpServlet {
             IngresoDAO dao = new IngresoDAOimpl();
             Detalle_ingresoDAO daoDI = new Detalle_ingresoDAOimpl();
             try {
-                // Nuevo registro
+                // Nuevo registro detalle de ingreso
                 id_ingreso = dao.insert(ingreso);
-                // conexion para registar el detalle
-                /*  String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
-                String user = "root"; // Esta variable contiene el nombre de usuario
-                String password = "1234567"; // Esta variable contiene la contraseña
-                Connection conn = DriverManager.getConnection(url, user, password);*/
                 ConexionBD conexion = new ConexionBD();
                 Connection conn = conexion.conectar();
                 PreparedStatement di = conn.prepareStatement("INSERT INTO detalle_ingreso (idingreso,idarticulo,cantidad,precio_compra,precio_venta) values (?,?,?,?,?)");
