@@ -12,6 +12,7 @@ import com.emergentes.modelo.Articulo;
 import com.emergentes.modelo.Detalle_ingreso;
 import com.emergentes.modelo.Ingreso;
 import com.emergentes.modelo.Persona;
+import com.emergentes.utiles.ConexionBD;
 import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -150,10 +151,12 @@ public class IngresoControlador extends HttpServlet {
                 // Nuevo registro
                 id_ingreso = dao.insert(ingreso);
                 // conexion para registar el detalle
-                String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
+                /*  String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
                 String user = "root"; // Esta variable contiene el nombre de usuario
                 String password = "1234567"; // Esta variable contiene la contraseña
-                Connection conn = DriverManager.getConnection(url, user, password);
+                Connection conn = DriverManager.getConnection(url, user, password);*/
+                ConexionBD conexion = new ConexionBD();
+                Connection conn = conexion.conectar();
                 PreparedStatement di = conn.prepareStatement("INSERT INTO detalle_ingreso (idingreso,idarticulo,cantidad,precio_compra,precio_venta) values (?,?,?,?,?)");
 
                 for (int i = 0; i < idarticulo.length; i++) {
@@ -291,7 +294,7 @@ public class IngresoControlador extends HttpServlet {
     }
 
     private void generarReporteDetalleCompra(HttpServletResponse response, int id) throws Exception {
-                response.setContentType("application/pdf");
+        response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "inline; filename=reporte_empresa.pdf");
 
         OutputStream out = response.getOutputStream();
@@ -376,23 +379,23 @@ public class IngresoControlador extends HttpServlet {
             ingreso = dao.getById(id);
             listaIngreso = daoDetalleC.getAllId(id);
 
-            htmlContent += "<p style=\"text-align: left;\">Proveedor: " + ingreso.getProveedor()+ "<br>"
+            htmlContent += "<p style=\"text-align: left;\">Proveedor: " + ingreso.getProveedor() + "<br>"
                     + "Numero de factura: " + ingreso.getNum_comprobante() + "<br>"
                     + "Fecha: " + ingreso.getFecha_hora() + "</p>\n";
 
             for (Detalle_ingreso detalleCompra : listaIngreso) {
                 htmlContent += "<tr>\n"
-                        + "<td style=\"font-size: 12px;\">" + detalleCompra.getIdingreso()+ "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleCompra.getIdingreso() + "</td>\n"
                         + "<td style=\"font-size: 12px;\">" + detalleCompra.getArticulo() + "</td>\n"
                         + "<td style=\"font-size: 12px;\">" + detalleCompra.getCantidad() + "</td>\n"
                         + "<td style=\"font-size: 12px;\">" + detalleCompra.getPrecio_compra() + "</td>\n"
-                        + "<td style=\"font-size: 12px;\">" + detalleCompra.getPrecio_venta()+ "</td>\n"
+                        + "<td style=\"font-size: 12px;\">" + detalleCompra.getPrecio_venta() + "</td>\n"
                         + "<td style=\"font-size: 12px;\">" + detalleCompra.getSubtotal() + "</td>\n"
                         + "</tr>\n";
             }
             htmlContent += "<tr>"
                     + "<td colspan=5 style=\"font-size: 12px;\">TOTAL</td>\n"
-                    + "<td style=\"font-size: 12px;\">" + ingreso.getTotal_compra()+ " </td>\n"
+                    + "<td style=\"font-size: 12px;\">" + ingreso.getTotal_compra() + " </td>\n"
                     + "</tr>";
 
             java.util.Date fechaActual = new java.util.Date();

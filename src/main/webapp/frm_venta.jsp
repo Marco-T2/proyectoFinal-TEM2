@@ -256,7 +256,7 @@
                                             <td><button id="btn" class="btn btn-success" onclick="agregarDetalle(${item.idarticulo}, '${item.nombre}', 0)"><ion-icon name="add"></ion-icon> Agregar</button></td>
                                         </tr>                                                                   
                                     </c:forEach>
-                                </tbody>onclick="saludar()"
+                                </tbody>
                             </table>
                         </div>
                         <div class="modal-footer justify-content-between">

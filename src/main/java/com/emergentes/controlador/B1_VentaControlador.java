@@ -174,12 +174,13 @@ public class B1_VentaControlador extends HttpServlet {
                 //venta.setIdventa(id_venta);
                 System.out.println("id de venta: " + id_venta);
                 // registrando detalle de venta
-                String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
+               /* String url = "jdbc:mysql://localhost:3306/db_sistema"; // Esta variable contiene la dirección de la base de datos
                 String user = "root"; // Esta variable contiene el nombre de usuario
-                String password = "1234567"; // Esta variable contiene la contraseña
-                Connection conn = DriverManager.getConnection(url, user, password);
+                String password = ""; // Esta variable contiene la contraseña
+                Connection conn = DriverManager.getConnection(url, user, password);*/
+                ConexionBD conexion = new ConexionBD();
+                Connection conn = conexion.conectar();
                 PreparedStatement dv = conn.prepareStatement("INSERT INTO detalle_venta (idventa,idarticulo,cantidad,precio_venta,descuento) values (?,?,?,?,?)");
-
                 for (int i = 0; i < idarticulo.length; i++) {
                     dv.setInt(1, id_venta);
                     dv.setInt(2, (Integer.parseInt(idarticulo[i])));
