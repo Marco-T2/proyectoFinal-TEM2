@@ -1,6 +1,6 @@
 <%
-    if(session.getAttribute("usuario")!=null){
-    
+    if (session.getAttribute("usuario") != null) {
+
 %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -56,27 +56,31 @@
                                             </div>                                                            
                                         </div>    
                                     </div>                                                    
-                                    <form action="B2_ClienteControlador" method="post">
+                                    <form class="needs-validation" novalidate action="B2_ClienteControlador" method="post" >
                                         <input type="hidden" name="idpersona" value="${cliente.idpersona}">
 
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <label>Tipo persona</label>
-                                                <input type="text" name="tipo_persona" value="${cliente.tipo_persona != null ? 'Cliente' : cliente.tipo_persona}" class="form-control"  readonly>
+                                                <input  type="text" name="tipo_persona" value="${cliente.tipo_persona != null ? 'Cliente' : cliente.tipo_persona}" class="form-control"  readonly>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
-                                                        <label>Nombre Apellido</label>
-                                                        <input type="text" name="nombre" value="${cliente.nombre}" class="form-control" placeholder="Ingresa el nombre">
+                                                        <label for="nameId" class="form-label">Nombre Apellido</label>
+                                                        <input type="text" name="nombre" value="${cliente.nombre}" class="form-control" id="nameId" required placeholder="Ingresa el nombre">
+                                                       <!-- <div class="valid-feedback">Dodo bien</div>-->
+                                                        <div class="invalid-feedback">Es obligatorio ingresar el nombre de cliente </div>
                                                     </div>
+
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
-                                                        <label>Carnet de Identidad</label>
-                                                        <input type="number" name="ci_documento" value="${cliente.ci_documento}" class="form-control" placeholder="Ingresa tu CI">
+                                                        <label>Cédula de Identidad</label>
+                                                        <input type="number" name="ci_documento" value="${cliente.ci_documento}" class="form-control" required placeholder="Ingresa tu CI">
+                                                        <div class="invalid-feedback">Ingresa Cédula de Identidad</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -85,25 +89,29 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Direccion</label>
-                                                        <input type="text" name="direccion" value="${cliente.direccion}" class="form-control" placeholder="Ingresa el departamento">
+                                                        <input type="text" name="direccion" value="${cliente.direccion}" class="form-control" required placeholder="Ingresa el departamento">
+                                                        <div class="invalid-feedback">Ingresa direción</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
-                                                        <label>Telefono</label>
-                                                        <input type="number" name="telefono" value="${cliente.telefono}" class="form-control" placeholder="Ingresa Nro telefono o Celular">
+                                                        <label>Teléfono</label>
+                                                        <input type="number" name="telefono" value="${cliente.telefono}" class="form-control" required placeholder="Ingresa Nro telefono o Celular">
+                                                         <div class="invalid-feedback">Ingresa teléfono del cliente</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- text input -->
                                             <div class="form-group">
                                                 <label>Correo</label>
-                                                <input type="email" name="email" value="${cliente.email}" class="form-control" placeholder="Ingresa tu correo">
+                                                <input type="email" name="email" value="${cliente.email}" class="form-control" required placeholder="Ingresa tu correo">
+                                                 <div class="invalid-feedback">Ingresa correo del cliente</div>
                                             </div>
                                         </div>
                                         <div class="modal-footer justify-content-between">
                                             <button type="submit" class="btn btn-primary">Guardar</button>
+                                           
                                         </div>
 
                                     </form>
@@ -125,7 +133,29 @@
 <!-- /.content-wrapper -->
 
 <jsp:include page="WEB-INF/footer.jsp"/>
-<%}else{
-response.sendRedirect("login.jsp");
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+    })()
+</script>
+<%} else {
+        response.sendRedirect("login.jsp");
     }
 %>

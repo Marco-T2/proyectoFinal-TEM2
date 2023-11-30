@@ -27,7 +27,7 @@
                             <!-- /.card-header -->
                             <div class="card-body"> 
                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                    <form action="IngresoControlador" method="post">
+                                    <form class="needs-validation" novalidate action="IngresoControlador" method="post">
                                         <input type="hidden" name="idingreso" value="${ingreso.idingreso}">
 
                                         <div class="card-body">
@@ -36,7 +36,7 @@
                                                     <input type="hidden"name="idusuario" value="${usuario.idusuario}">
                                                     <div class="form-group">
                                                         <label for="" class="form-label">Proveedor</label>
-                                                        <select name="idproveedor" class="form-control">
+                                                        <select required name="idproveedor" class="form-control">
                                                             <option value="">--Seleccione--</option>
                                                             <c:forEach var="item" items="${lista_proveedores}">
                                                                 <option value="${item.idpersona}" 
@@ -46,6 +46,7 @@
                                                                         >${item.nombre}</option>                            
                                                             </c:forEach>
                                                         </select>
+                                                        <div class="invalid-feedback">Seleccionar un cliente</div>
                                                     </div>
                                                 </div>
 
@@ -55,17 +56,20 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Fecha</label>
-                                                        <input type="date" name="fecha_hora" value="${ingreso.fecha_hora}" class="form-control" placeholder="Ingresa fecha">
+                                                        <input required type="date" name="fecha_hora" value="${ingreso.fecha_hora}" class="form-control" placeholder="Ingresa fecha">
+                                                        <div class="invalid-feedback">Ingresa fecha</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Tipo Comprobante(*):</label>
-                                                        <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required="">
+                                                        <select required name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required="">
+                                                            <option value="">--Seleccionar--</option>
                                                             <option value="Boleta">Boleta</option>
                                                             <option value="Factura">Factura</option>
                                                             <option value="Ticket">Ticket</option>
                                                         </select>
+                                                        <div class="invalid-feedback">Seleccionar tipo de comprobante</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,14 +78,16 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Serie</label>
-                                                        <input type="text" name="serie_comprobante" value="${ingreso.serie_comprobante}" class="form-control" placeholder="Ingresa serie de comprobante">
+                                                        <input required type="text" name="serie_comprobante" value="${ingreso.serie_comprobante}" class="form-control" placeholder="Ingresa serie de comprobante">
+                                                        <div class="invalid-feedback">Ingresa serie de comprobante</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Número</label>
-                                                        <input type="text" name="num_comprobante" value="${ingreso.num_comprobante}" class="form-control" placeholder="Ingresa número">
+                                                        <input required type="text" name="num_comprobante" value="${ingreso.num_comprobante}" class="form-control" placeholder="Ingresa número">
+                                                        <div class="invalid-feedback">Ingresa numero de comprobante</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -271,6 +277,28 @@
         detalles = detalles - 1;
         evaluar()
     }
+    //script de validadcion
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+    })()
+    // fin de escript de validacion
 </script>
 <%}else{
 response.sendRedirect("login.jsp");

@@ -53,20 +53,22 @@
                                             </div>                                                            
                                         </div>    
                                     </div>                                                    
-                                    <form action="D2_CategoriaControlador" method="post">
+                                    <form class="needs-validation" novalidate action="D2_CategoriaControlador" method="post">
                                         <input type="hidden" name="idcategoria" value="${categoria.idcategoria}">                                                        <div class="card-body">
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="form-group">
                                                         <label>Nombre de categoria</label>
-                                                        <input type="text" name="nombre" value="${categoria.nombre}" class="form-control" placeholder="Ingresa el nombre de categoria">
+                                                        <input required type="text" name="nombre" value="${categoria.nombre}" class="form-control" placeholder="Ingresa el nombre de categoria">
+                                                        <div class="invalid-feedback">Ingresar categoria</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Descripción</label>
-                                                        <input type="text" name="descripcion" value="${categoria.descripcion}" class="form-control" placeholder="Ingresa una descripcion">
+                                                        <input required type="text" name="descripcion" value="${categoria.descripcion}" class="form-control" placeholder="Ingresa una descripcion">
+                                                        <div class="invalid-feedback">Ingresar descripción de categoria</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -93,6 +95,30 @@
 <!-- /.content-wrapper -->
 
 <jsp:include page="WEB-INF/footer.jsp"/> 
+<script>
+     //script de validadcion
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+    })()
+    // fin de escript de validacion
+    </script>
 <%}else{
 response.sendRedirect("login.jsp");
     }

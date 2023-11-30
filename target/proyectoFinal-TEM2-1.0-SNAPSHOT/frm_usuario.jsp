@@ -55,7 +55,7 @@
                                             </div>                                                            
                                         </div>    
                                     </div>                                                    
-                                    <form action="H1_UsuarioControlador" method="post">
+                                    <form class="needs-validation" novalidate action="H1_UsuarioControlador" method="post">
                                         <input type="hidden" name="idusuario" value="${usuario.idusuario}">
                                         <div class="card-body">
                                             <div class="row">
@@ -63,14 +63,16 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Nombres y Apellidos</label>
-                                                        <input type="text" name="nombre" value="${usuario.nombre}" class="form-control" placeholder="Ingresa el nombre">
+                                                        <input required type="text" name="nombre" value="${usuario.nombre}" class="form-control" placeholder="Ingresa el nombre">
+                                                        <div class="invalid-feedback">Ingresar Nombre de usuario</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Carnet de Identidad</label>
-                                                        <input type="number" name="ci_documento" value="${usuario.ci_documento}" class="form-control" placeholder="Ingresa tu CI">
+                                                        <input required type="number" name="ci_documento" value="${usuario.ci_documento}" class="form-control" placeholder="Ingresa tu CI">
+                                                        <div class="invalid-feedback">Ingresar Cédula de Identidad del usuairo</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -79,14 +81,16 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Email</label>
-                                                        <input type="email" name="email" value="${usuario.email}" class="form-control" placeholder="Ingresa el email">
+                                                        <input required type="email" name="email" value="${usuario.email}" class="form-control" placeholder="Ingresa el email">
+                                                        <div class="invalid-feedback">Ingresar correo</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Cargo</label>
-                                                        <input type="text" name="cargo" value="${usuario.cargo}" class="form-control" placeholder="Ingresa Cargo que ocupa">
+                                                        <input required type="text" name="cargo" value="${usuario.cargo}" class="form-control" placeholder="Ingresa Cargo que ocupa">
+                                                        <div class="invalid-feedback">Ingresar cargo</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -95,20 +99,22 @@
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Usuario</label>
-                                                        <input type="text" name="login" value="${usuario.login}" class="form-control" placeholder="Ingresa el usuario">
+                                                        <input required type="text" name="login" value="${usuario.login}" class="form-control" placeholder="Ingresa el usuario">
+                                                        <div class="invalid-feedback">Ingresar usuario</div>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <!-- text input -->
                                                     <div class="form-group">
                                                         <label>Contraseña</label>
-                                                        <input type="password" name="clave" value="${usuario.clave}" class="form-control" placeholder="Ingresa una contraseña">
+                                                        <input required type="password" name="clave" value="${usuario.clave}" class="form-control" placeholder="Ingresa una contraseña">
+                                                        <div class="invalid-feedback">Ingresar Contraseña</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="" class="form-label">Rol</label>
-                                                <select name="idrol" class="form-control">
+                                                <select required name="idrol" class="form-control">
                                                     <option value="">--Seleccione--</option>
                                                     <c:forEach var="item" items="${lista_roles}">
                                                         <option value="${item.idrol}" 
@@ -118,6 +124,7 @@
                                                                 >${item.nombre}</option>                            
                                                     </c:forEach>
                                                 </select>
+                                                <div class="invalid-feedback">Seleccionar Rol de usuario</div>
                                             </div>
                                         </div>
                                         <div class="modal-footer justify-content-between">
@@ -142,6 +149,30 @@
 <!-- /.content-wrapper -->
 
 <jsp:include page="WEB-INF/footer.jsp"/>  
+<script>
+     //script de validadcion
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+    })()
+    // fin de escript de validacion
+    </script>
 <%}else{
 response.sendRedirect("login.jsp");
     }
